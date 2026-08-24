@@ -1,0 +1,43 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Dark palette: same structure, tuned contrast. -->
+    <SolidColorBrush x:Key="Brush.Window.Background" Color="#0B1220"/>
+    <SolidColorBrush x:Key="Brush.Sidebar.Background" Color="#0F172A"/>
+    <SolidColorBrush x:Key="Brush.Card.Background" Color="#111C30"/>
+    <SolidColorBrush x:Key="Brush.Card.Border" Color="#1E2A44"/>
+    <SolidColorBrush x:Key="Brush.Divider" Color="#1B2740"/>
+
+    <SolidColorBrush x:Key="Brush.TextPrimary" Color="#E8EEF9"/>
+    <SolidColorBrush x:Key="Brush.TextSecondary" Color="#9DB0CC"/>
+    <SolidColorBrush x:Key="Brush.TextMuted" Color="#64748B"/>
+
+    <SolidColorBrush x:Key="Brush.Accent" Color="#3B82F6"/>
+    <SolidColorBrush x:Key="Brush.Accent.Hover" Color="#60A5FA"/>
+    <SolidColorBrush x:Key="Brush.Accent.Pressed" Color="#2563EB"/>
+    <SolidColorBrush x:Key="Brush.Accent.Text" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="Brush.Accent.Subtle" Color="#16233F"/>
+
+    <SolidColorBrush x:Key="Brush.Success" Color="#34D399"/>
+    <SolidColorBrush x:Key="Brush.Warning" Color="#FBBF24"/>
+    <SolidColorBrush x:Key="Brush.Danger" Color="#F87171"/>
+
+    <SolidColorBrush x:Key="Brush.Badge.Safe.Bg" Color="#12291D"/>
+    <SolidColorBrush x:Key="Brush.Badge.Safe.Fg" Color="#4ADE80"/>
+    <SolidColorBrush x:Key="Brush.Badge.Recommended.Bg" Color="#16233F"/>
+    <SolidColorBrush x:Key="Brush.Badge.Recommended.Fg" Color="#93C5FD"/>
+    <SolidColorBrush x:Key="Brush.Badge.Optional.Bg" Color="#2D2412"/>
+    <SolidColorBrush x:Key="Brush.Badge.Optional.Fg" Color="#FCD34D"/>
+    <SolidColorBrush x:Key="Brush.Badge.Advanced.Bg" Color="#2C1618"/>
+    <SolidColorBrush x:Key="Brush.Badge.Advanced.Fg" Color="#FCA5A5"/>
+    <SolidColorBrush x:Key="Brush.Badge.Protected.Bg" Color="#1B2740"/>
+    <SolidColorBrush x:Key="Brush.Badge.Protected.Fg" Color="#94A3B8"/>
+
+    <SolidColorBrush x:Key="Brush.Input.Background" Color="#0D1729"/>
+    <SolidColorBrush x:Key="Brush.Input.Border" Color="#28354F"/>
+    <SolidColorBrush x:Key="Brush.ListItem.Hover" Color="#152238"/>
+    <SolidColorBrush x:Key="Brush.ListItem.Selected" Color="#182A4A"/>
+    <SolidColorBrush x:Key="Brush.ProgressBar.Fill" Color="#3B82F6"/>
+    <SolidColorBrush x:Key="Brush.ProgressBar.Track" Color="#1E2A44"/>
+    <SolidColorBrush x:Key="Brush.Scrollbar" Color="#334155"/>
+</ResourceDictionary>
