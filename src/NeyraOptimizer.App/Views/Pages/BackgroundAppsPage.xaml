@@ -1,0 +1,87 @@
+﻿<UserControl x:Class="NeyraOptimizer.App.Views.Pages.BackgroundAppsPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:NeyraOptimizer.App.Localization"
+             xmlns:vm="clr-namespace:NeyraOptimizer.App.ViewModels">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="{loc:Loc Background.Title}" Style="{StaticResource PageTitle}" Margin="0,0,0,12"/>
+
+        <Border Grid.Row="1" Style="{StaticResource CardBorder}" Padding="12,10" Margin="0,0,0,10">
+            <DockPanel>
+                <Button DockPanel.Dock="Right" Style="{StaticResource SecondaryButton}" Command="{Binding EndTaskCommand}"
+                        Content="{loc:Loc Background.EndTask}" MinWidth="110" Margin="8,0"/>
+                <Button DockPanel.Dock="Right" Style="{StaticResource SecondaryButton}" Command="{Binding RefreshCommand}"
+                        Content="{loc:Loc Common.Refresh}"/>
+                <TextBox Width="260" VerticalAlignment="Center" Style="{StaticResource NeyraTextBox}"
+                         Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
+            </DockPanel>
+        </Border>
+
+        <Grid Grid.Row="2" Margin="0,0,0,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="{loc:Loc Background.ProcessesHeader}" Style="{StaticResource SectionTitle}"/>
+            <ListBox Grid.Row="1" ItemsSource="{Binding VisibleProcesses}" SelectedItem="{Binding SelectedProcess}"
+                     Style="{StaticResource NeyraListBox}" BorderBrush="{DynamicResource Brush.Card.Border}"
+                     BorderThickness="1">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border Style="{StaticResource RowBorder}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="140"/>
+                                    <ColumnDefinition Width="90"/>
+                                    <ColumnDefinition Width="60"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding Name}" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                                <TextBlock Grid.Column="1" Text="{Binding KindText}" VerticalAlignment="Center"
+                                           Foreground="{DynamicResource Brush.TextSecondary}" FontSize="12"/>
+                                <TextBlock Grid.Column="2" Text="{Binding MemoryText}" VerticalAlignment="Center"
+                                           Foreground="{DynamicResource Brush.TextSecondary}" FontSize="12"/>
+                                <TextBlock Grid.Column="3" Text="{Binding Pid}" VerticalAlignment="Center"
+                                           Foreground="{DynamicResource Brush.TextMuted}" FontSize="11.5"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="{loc:Loc Background.ToggleHeader}" Style="{StaticResource SectionTitle}"/>
+            <ListBox Grid.Row="1" ItemsSource="{Binding ToggleRows}" x:Name="ToggleList"
+                     Style="{StaticResource NeyraListBox}" BorderBrush="{DynamicResource Brush.Card.Border}"
+                     BorderThickness="1">
+                <ListBox.ItemTemplate>
+                    <DataTemplate DataType="{x:Type vm:BgAppToggleRow}">
+                        <Border Style="{StaticResource RowBorder}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding DisplayName}" VerticalAlignment="Center"/>
+                                <CheckBox Grid.Column="1" IsChecked="{Binding Enabled, Mode=TwoWay}"
+                                          Checked="BgToggle_Changed" Unchecked="BgToggle_Changed"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+    </Grid>
+</UserControl>
