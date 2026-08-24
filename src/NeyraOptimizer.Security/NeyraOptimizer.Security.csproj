@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>NeyraOptimizer.Security</RootNamespace>
+    <Description>Neyra Optimizer security layer: elevation broker, safe execution, protected components, integrity checks.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NeyraOptimizer.Domain\NeyraOptimizer.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
