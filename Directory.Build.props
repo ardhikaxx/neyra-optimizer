@@ -1,0 +1,42 @@
+<Project>
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Deterministic>true</Deterministic>
+    <AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
+
+    <!-- Product identity -->
+    <Authors>Neyra Software</Authors>
+    <Company>Neyra Software</Company>
+    <Product>Neyra Optimizer</Product>
+    <Copyright>Copyright © Neyra Software</Copyright>
+    <NeutralLanguage>en-US</NeutralLanguage>
+
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <FileVersion Condition="'$(FileVersion)' == ''">$(VersionPrefix)</FileVersion>
+    <InformationalVersion>Neyra Optimizer 1.0.0 – Performance Tuning Tool for Windows 10 &amp; 11</InformationalVersion>
+
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>latest-recommended</AnalysisLevel>
+    <EnforceCodeStyleInBuild>false</EnforceCodeStyleInBuild>
+  </PropertyGroup>
+
+  <!-- Release hardening: no debug symbols in production output -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <!-- Production configuration: Release settings plus deployment optimizations.
+       Trimming is intentionally NOT enabled: reflection-based WPF/WinRT usage is not trim-safe. -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Production'">
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <PublishReadyToRun>true</PublishReadyToRun>
+    <SelfContained>true</SelfContained>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+  </PropertyGroup>
+</Project>
