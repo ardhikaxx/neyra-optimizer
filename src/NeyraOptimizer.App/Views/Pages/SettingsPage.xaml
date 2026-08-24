@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="NeyraOptimizer.App.Views.Pages.SettingsPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:NeyraOptimizer.App.Localization">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel>
+            <Grid Margin="0,0,0,12">
+                <TextBlock Text="{loc:Loc Settings.Title}" Style="{StaticResource PageTitle}"/>
+                <Button HorizontalAlignment="Right" Style="{StaticResource AccentButton}"
+                        Command="{Binding SaveCommand}" Content="{loc:Loc Common.OK}" MinWidth="110"/>
+            </Grid>
+
+            <Border Style="{StaticResource CardBorder}" Margin="0,0,0,10">
+                <StackPanel>
+                    <TextBlock Text="{loc:Loc Settings.Theme}" FontWeight="SemiBold" Margin="0,0,0,6"/>
+                    <ComboBox ItemsSource="{Binding ThemeOptions}" SelectedItem="{Binding Theme}"
+                              MinWidth="200" HorizontalAlignment="Left" Style="{StaticResource NeyraComboBox}"/>
+                    <TextBlock Text="{loc:Loc Settings.Language}" FontWeight="SemiBold" Margin="0,12,0,6"/>
+                    <ComboBox ItemsSource="{Binding LanguageOptions}" SelectedItem="{Binding Language}"
+                              MinWidth="200" HorizontalAlignment="Left" Style="{StaticResource NeyraComboBox}"/>
+                    <UniformGrid Columns="2" Margin="0,14,0,0">
+                        <StackPanel>
+                            <CheckBox Content="{loc:Loc Settings.Monitoring}" IsChecked="{Binding Monitoring}" Margin="0,3"/>
+                            <CheckBox Content="{loc:Loc Settings.AutoScan}" IsChecked="{Binding AutoScan}" Margin="0,3"/>
+                            <CheckBox Content="{loc:Loc Settings.ConfirmBeforeApply}" IsChecked="{Binding ConfirmBeforeApply}" Margin="0,3"/>
+                            <CheckBox Content="{loc:Loc Settings.RestorePointDefault}" IsChecked="{Binding RestorePointDefault}" Margin="0,3"/>
+                            <CheckBox Content="{loc:Loc Settings.Notifications}" IsChecked="{Binding Notifications}" Margin="0,3"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock Text="{loc:Loc Settings.RefreshSeconds}"/>
+                            <Slider Minimum="2" Maximum="60" Value="{Binding RefreshSeconds}" TickFrequency="1"
+                                    IsSnapToTickEnabled="True" Width="220" HorizontalAlignment="Left" Margin="0,4"/>
+                            <TextBlock Text="{Binding RefreshSeconds, StringFormat={}{0}s}" Style="{StaticResource MutedText}"/>
+                            <TextBlock Text="{loc:Loc Settings.LoggingLevel}" Margin="0,10,0,4"/>
+                            <ComboBox ItemsSource="{Binding LogLevels}" SelectedItem="{Binding LoggingLevel}"
+                                      MinWidth="160" HorizontalAlignment="Left" Style="{StaticResource NeyraComboBox}"/>
+                        </StackPanel>
+                    </UniformGrid>
+                    <CheckBox Content="{loc:Loc Settings.AdvancedMode}" IsChecked="{Binding Advanced}" Margin="0,14,0,3"/>
+                    <TextBlock Text="{loc:Loc Settings.AdvancedWarning}" Style="{StaticResource MutedText}" TextWrapping="Wrap"/>
+                </StackPanel>
+            </Border>
+
+            <Border Style="{StaticResource CardBorder}" Margin="0,0,0,10">
+                <StackPanel>
+                    <TextBlock Text="{loc:Loc Settings.UpdateSection}" Style="{StaticResource SectionTitle}"/>
+                    <TextBlock Text="{Binding UpdateNote}" Style="{StaticResource MutedText}" TextWrapping="Wrap"/>
+                </StackPanel>
+            </Border>
+
+            <Border Style="{StaticResource CardBorder}" Margin="0,0,0,10">
+                <StackPanel>
+                    <TextBlock Text="{loc:Loc Settings.UninstallSection}" Style="{StaticResource SectionTitle}"/>
+                    <TextBlock Text="{Binding UninstallKeepNote}" Style="{StaticResource MutedText}" TextWrapping="Wrap" Margin="0,0,0,8"/>
+                    <Button Style="{StaticResource DangerButton}" Command="{Binding UninstallRestoreAllCommand}"
+                            Content="{loc:Loc Settings.UninstallRestoreAll}" HorizontalAlignment="Left" MinWidth="320"/>
+                </StackPanel>
+            </Border>
+
+            <Border Style="{StaticResource CardBorder}">
+                <StackPanel>
+                    <TextBlock Text="{loc:Loc Settings.DataFolder}" Style="{StaticResource SectionTitle}"/>
+                    <TextBox Text="{Binding DataFolder, Mode=OneWay}" IsReadOnly="True"
+                             Style="{StaticResource NeyraTextBox}" Background="Transparent"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
