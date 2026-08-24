@@ -63,8 +63,13 @@ public sealed class NeyraApplication : System.Windows.Application
 
         DispatcherUnhandledException += (_, args) =>
         {
-            _services.GetRequiredService<NeyraOptimizer.Infrastructure.Logging.INeyraLogger>()
-                .Critical("UI", "DispatcherException", args.Exception.Message);
+            var logger = _services.GetRequiredService<NeyraOptimizer.Infrastructure.Logging.INeyraLogger>();
+            var ex = args.Exception;
+            logger.Critical("UI", "DispatcherException", ex.Message);
+            var depth = 0;
+            for (var inner = ex.InnerException; inner is not null && depth < 8; inner = inner.InnerException, depth++)
+                logger.Critical("UI", "DispatcherInner" + depth, inner.GetType().Name + ": " + inner.Message);
+            logger.Critical("UI", "DispatcherStack", ex.StackTrace ?? string.Empty);
             args.Handled = true;
             MessageBox.Show(
                 "Terjadi kesalahan tak terduga namun aplikasi tetap berjalan.\n\n" +

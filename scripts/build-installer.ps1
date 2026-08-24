@@ -24,6 +24,9 @@ $artifacts = Join-Path $repoRoot 'artifacts'
 $publishDir = Join-Path $artifacts 'publish'
 $version = '1.0.0'
 
+# Prevent mixed-config payloads: always start from an empty publish dir.
+if (Test-Path $publishDir) { Remove-Item -Recurse -Force $publishDir }
+
 Write-Host "== 1/4 Publishing app ($Configuration, win-x64) ==" -ForegroundColor Cyan
 $publishArgs = @(
     'publish', (Join-Path $repoRoot 'src\NeyraOptimizer.App\NeyraOptimizer.App.csproj'),
@@ -66,11 +69,12 @@ Sign both binaries with your organization certificate:
 See docs/RELEASE.md for the full release checklist.
 "@
 
-# Stage the final MSI into artifacts\
-$builtMsi = Get-ChildItem (Join-Path $repoRoot 'installer\bin') -Filter '*.msi' -Recurse | Select-Object -First 1
-if ($null -eq $builtMsi) { throw "MSI not found after build." }
-$finalMsi = Join-Path $artifacts "NeyraOptimizer-$version-x64.msi"
-Copy-Item $builtMsi.FullName $finalMsi -Force
+# Stage the final MSI into artifacts\ (exact per-config path — never guess recursively)
+$builtMsi = Join-Path $repoRoot "installer\bin\x64\$Configuration\NeyraOptimizer-$version-x64.msi"
+if (-not (Test-Path $builtMsi)) { throw "MSI not found at expected path: $builtMsi" }
+$suffix = if ($Configuration -eq 'Production') { 'offline' } else { 'light' }
+$finalMsi = Join-Path $artifacts "NeyraOptimizer-$version-win10-11-x64-$suffix.msi"
+Copy-Item $builtMsi $finalMsi -Force
 
 Write-Host "Done." -ForegroundColor Green
 Get-Item $finalMsi | Select-Object FullName, Length

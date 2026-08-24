@@ -29,6 +29,20 @@ public sealed class Translator : System.ComponentModel.INotifyPropertyChanged
     private Translator()
     {
         _resources = new ResourceManager("NeyraOptimizer.App.Localization.Strings", typeof(Translator).Assembly);
+        TryLog("ctor ok");
+    }
+
+    internal static void TryLog(string msg)
+    {
+        try
+        {
+            var dir = System.IO.Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "NeyraOptimizer", "Logs");
+            System.IO.Directory.CreateDirectory(dir);
+            System.IO.File.AppendAllText(System.IO.Path.Combine(dir, "loc-debug.log"),
+                DateTime.UtcNow.ToString("O") + " " + msg + Environment.NewLine);
+        }
+        catch { /* diagnostics only */ }
     }
 
     public CultureInfo Culture => _culture;
@@ -48,6 +62,14 @@ public sealed class Translator : System.ComponentModel.INotifyPropertyChanged
         PropertyChanged?.Invoke(this, new System.ComponentModel.PropertyChangedEventArgs("Item[]"));
     }
 
-    public string this[string key] =>
-        _resources.GetString(key, _culture) ?? _resources.GetString(key, CultureInfo.InvariantCulture) ?? $"[{key}]";
+    public string this[string key]
+    {
+        get
+        {
+            var value = _resources.GetString(key, _culture)
+                        ?? _resources.GetString(key, CultureInfo.InvariantCulture);
+            if (value is null) TryLog("MISS key=" + key + " culture=" + _culture.Name);
+            return value ?? $"[{key}]";
+        }
+    }
 }

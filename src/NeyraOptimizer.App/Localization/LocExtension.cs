@@ -17,11 +17,15 @@ public sealed class LocExtension : MarkupExtension
         if (string.IsNullOrWhiteSpace(Key))
             return string.Empty;
 
-        return new Binding($"[{Key}]")
+        // IMPORTANT: delegate to Binding.ProvideValue so WPF attaches a proper
+        // BindingExpression. Returning a raw Binding from a custom extension makes the
+        // XAML writer throw "'Binding' is not a valid value for property ..." at load.
+        var binding = new Binding($"[{Key}]")
         {
             Source = Translator.Instance,
             Mode = BindingMode.OneWay,
             FallbackValue = Key,
         };
+        return binding.ProvideValue(serviceProvider);
     }
 }

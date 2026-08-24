@@ -20,6 +20,11 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
   </ItemGroup>
 
+  <!-- Window Icon="/Assets/neyra.ico" resolves against embedded pack resources -->
+  <ItemGroup>
+    <Resource Include="Assets\neyra.ico" />
+  </ItemGroup>
+
   <ItemGroup>
     <EmbeddedResource Update="Localization\Strings.resx" />
     <EmbeddedResource Update="Localization\Strings.id.resx">
