@@ -11,7 +11,7 @@ namespace NeyraOptimizer.Infrastructure.CrashRecovery;
 /// detects the file, warns the user and offers rollback from the linked snapshot — never an
 /// automatic re-run.
 /// </summary>
-public sealed class PendingOperationTracker
+public sealed class PendingOperationTracker : IPendingOperationTracker
 {
     private readonly string _path;
 
