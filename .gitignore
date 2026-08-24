@@ -23,3 +23,8 @@
 *.suo
 *.user
 *.userprefs
+
+## Neyra artifacts
+artifacts/
+installer/bin/
+installer/obj/
