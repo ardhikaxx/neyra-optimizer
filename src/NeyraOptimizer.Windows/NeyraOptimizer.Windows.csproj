@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <PackageReference Include="System.Management" />
-    <PackageReference Include="Microsoft.Win32.TaskScheduler" />
   </ItemGroup>
 
   <ItemGroup>
