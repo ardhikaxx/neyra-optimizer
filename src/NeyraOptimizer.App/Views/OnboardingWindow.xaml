@@ -1,0 +1,41 @@
+<Window x:Class="NeyraOptimizer.App.Views.OnboardingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:loc="clr-namespace:NeyraOptimizer.App.Localization"
+        Title="{loc:Loc Onboarding.WelcomeTitle}" Width="640" SizeToContent="Height"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Background="{DynamicResource Brush.Window.Background}" Icon="/Assets/neyra.ico">
+    <Border Padding="34,30">
+        <StackPanel>
+            <Border Width="52" Height="52" CornerRadius="14" Background="{DynamicResource Brush.Accent}"
+                    HorizontalAlignment="Left" Margin="0,0,0,16">
+                <TextBlock Text="N" Foreground="White" FontWeight="Bold" FontSize="27"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+
+            <TextBlock Text="{loc:Loc App.Title}" FontSize="24" FontWeight="SemiBold"/>
+            <TextBlock Text="{loc:Loc App.Subtitle}" FontSize="12.5"
+                       Foreground="{DynamicResource Brush.TextMuted}" Margin="0,2,0,18"/>
+
+            <TextBlock Text="{loc:Loc Onboarding.WelcomeBody}" TextWrapping="Wrap" FontSize="13.5" Margin="0,0,0,18"/>
+
+            <Border Style="{StaticResource CardBorder}" Margin="0,0,0,18">
+                <StackPanel>
+                    <TextBlock Text="{loc:Loc Onboarding.SafetyTitle}" Style="{StaticResource SectionTitle}"/>
+                    <TextBlock Text="{loc:Loc Onboarding.SafetyBullets}" TextWrapping="Wrap" FontSize="13"
+                               LineHeight="21"/>
+                </StackPanel>
+            </Border>
+
+            <CheckBox x:Name="ConsentCheck" Content="{loc:Loc Onboarding.Consent}"
+                      Checked="Consent_Changed" Unchecked="Consent_Changed" Margin="0,0,0,20"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="ReadOnlyBtn" Style="{StaticResource SecondaryButton}" MinWidth="190" Margin="0,0,10,0"
+                        Content="{loc:Loc Onboarding.ContinueReadOnly}" Click="ReadOnly_Click"/>
+                <Button x:Name="AgreeBtn" Style="{StaticResource AccentButton}" MinWidth="200" IsEnabled="False"
+                        Content="{loc:Loc Onboarding.StartScan}" Click="Agree_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</Window>
