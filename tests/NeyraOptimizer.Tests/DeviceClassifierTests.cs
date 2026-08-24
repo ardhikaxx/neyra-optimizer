@@ -1,3 +1,4 @@
+﻿using Xunit;
 using NeyraOptimizer.Domain.Engines;
 using NeyraOptimizer.Domain.Enums;
 using NeyraOptimizer.Domain.Models.System;
@@ -57,7 +58,7 @@ public class DeviceClassifierTests
     public void ClassificationReasonsAreProduced()
     {
         var profile = TestSystems.Profile();
-        DeviceClassifier.Classify(profile);
-        Assert.NotEmpty(profile.ClassificationReasons);
+        var (_, _, reasons) = DeviceClassifier.Classify(profile);
+        Assert.NotEmpty(reasons);
     }
 }

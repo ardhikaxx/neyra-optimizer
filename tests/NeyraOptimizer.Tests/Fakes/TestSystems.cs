@@ -1,6 +1,7 @@
-using NeyraOptimizer.Domain.Enums;
+﻿using NeyraOptimizer.Domain.Enums;
 using NeyraOptimizer.Domain.Models.Power;
 using NeyraOptimizer.Domain.Models.System;
+using NeyraOptimizer.Domain.Rules;
 using NeyraOptimizer.Security.Protection;
 
 namespace NeyraOptimizer.Tests.Fakes;
@@ -54,10 +55,10 @@ public static class TestSystems
         return new AnalysisBundle
         {
             Profile = profile,
-            Services = services?.ToList() ?? Array.Empty<ServiceInfo>(),
-            StartupEntries = startup?.ToList() ?? Array.Empty<StartupEntry>(),
-            Tasks = tasks?.ToList() ?? Array.Empty<ScheduledTaskInfo>(),
-            InstalledApps = apps?.ToList() ?? Array.Empty<InstalledAppInfo>(),
+            Services = (services ?? Array.Empty<ServiceInfo>()).ToList(),
+            StartupEntries = (startup ?? Array.Empty<StartupEntry>()).ToList(),
+            Tasks = (tasks ?? Array.Empty<ScheduledTaskInfo>()).ToList(),
+            InstalledApps = (apps ?? Array.Empty<InstalledAppInfo>()).ToList(),
         };
     }
 }

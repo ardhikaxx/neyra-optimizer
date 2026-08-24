@@ -1,3 +1,5 @@
+﻿using Xunit;
+using NeyraOptimizer.Domain.Rules;
 using NeyraOptimizer.Domain.Enums;
 using NeyraOptimizer.Domain.Models.System;
 using NeyraOptimizer.Optimization.Safety;

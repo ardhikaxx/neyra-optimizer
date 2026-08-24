@@ -1,3 +1,4 @@
+﻿using Xunit;
 using NeyraOptimizer.Domain.Engines;
 using NeyraOptimizer.Domain.Enums;
 using NeyraOptimizer.Domain.Models.System;

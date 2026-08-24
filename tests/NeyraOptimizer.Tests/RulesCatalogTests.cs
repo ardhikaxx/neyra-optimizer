@@ -1,3 +1,4 @@
+﻿using Xunit;
 using NeyraOptimizer.Optimization.Catalog;
 using NeyraOptimizer.Security.Protection;
 

@@ -1,3 +1,4 @@
+﻿using Xunit;
 using NeyraOptimizer.Domain.Engines;
 using NeyraOptimizer.Domain.Enums;
 using NeyraOptimizer.Domain.Models.System;
@@ -70,14 +71,16 @@ public class RecommendationEngineTests
             Description = "doc-only",
             Area = RuleArea.Services,
             Category = RecommendationCategory.DoNotModify,
-            Payload = new Dictionary<string, string> { ["TargetId"] = "DefinitelyMissingService" },
+            Payload = new Dictionary<string, string> { ["TargetId"] = "DiagTrack" },
         }).ToList();
 
-        var bundle = TestSystems.Bundle();
+        var bundle = TestSystems.Bundle(services: new[]
+        {
+            new ServiceInfo { ServiceName = "DiagTrack", DisplayName = "DiagTrack", StartMode = ServiceStartMode.Automatic },
+        });
         var normal = Engine.BuildRecommendations(bundle, catalog, UsageProfileKind.Balanced, false);
         var advanced = Engine.BuildRecommendations(bundle, catalog, UsageProfileKind.Balanced, true);
         Assert.DoesNotContain(normal, r => r.Category == RecommendationCategory.DoNotModify);
-        // In advanced mode the rule is surfaced (even if it would be blocked by safety later).
-        Assert.Equal(normal.Count + 0, advanced.Count - 1);
+        Assert.Contains(advanced, r => r.RuleId == "test_dnm");
     }
 }

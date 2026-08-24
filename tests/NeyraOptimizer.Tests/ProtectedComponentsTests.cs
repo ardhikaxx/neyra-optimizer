@@ -1,3 +1,4 @@
+﻿using Xunit;
 using NeyraOptimizer.Security.Protection;
 
 namespace NeyraOptimizer.Tests;

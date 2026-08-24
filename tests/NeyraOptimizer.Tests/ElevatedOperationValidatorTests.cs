@@ -1,3 +1,5 @@
+﻿using Xunit;
+using NeyraOptimizer.Domain.Abstractions;
 using NeyraOptimizer.Domain.Enums;
 using NeyraOptimizer.Security.Elevation;
 
@@ -54,7 +56,7 @@ public class ElevatedOperationValidatorTests
             {
                 new ElevatedRegistryWrite
                 {
-                    Root = Microsoft.Win32.RegRoot.LocalMachine,
+                    Root = NeyraOptimizer.Domain.Abstractions.RegRoot.LocalMachine,
                     SubKey = @"SAM\SomeWhere",
                     ValueName = "v",
                     Kind = Microsoft.Win32.RegistryValueKind.DWord,

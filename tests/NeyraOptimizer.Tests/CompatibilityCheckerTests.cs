@@ -1,3 +1,4 @@
+﻿using Xunit;
 using NeyraOptimizer.Diagnostics.Compatibility;
 using NeyraOptimizer.Domain.Models.System;
 
