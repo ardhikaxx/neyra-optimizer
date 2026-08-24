@@ -4,7 +4,7 @@ using NeyraOptimizer.Infrastructure.IO;
 
 namespace NeyraOptimizer.Infrastructure.Persistence;
 
-public sealed class HistoryRepository : JsonFileRepositoryBase
+public sealed class HistoryRepository : JsonFileRepositoryBase, IHistoryRepository
 {
     private readonly string _root;
     private const int MaxRecords = 500; // prune oldest to keep storage bounded
