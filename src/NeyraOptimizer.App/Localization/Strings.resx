@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <!-- Shell -->
+  <data name="App.Title" xml:space="preserve"><value>Neyra Optimizer</value></data>
+  <data name="App.Subtitle" xml:space="preserve"><value>Performance Tuning Tool for Windows 10 &amp; 11</value></data>
+  <data name="Nav.Dashboard"><value>Dashboard</value></data>
+  <data name="Nav.Analyze"><value>Analyze</value></data>
+  <data name="Nav.OptimizationCenter"><value>Optimization Center</value></data>
+  <data name="Nav.Debloat"><value>Debloat</value></data>
+  <data name="Nav.Services"><value>Services</value></data>
+  <data name="Nav.Startup"><value>Startup</value></data>
+  <data name="Nav.BackgroundApps"><value>Background Apps</value></data>
+  <data name="Nav.ScheduledTasks"><value>Scheduled Tasks</value></data>
+  <data name="Nav.VisualEffects"><value>Visual Effects</value></data>
+  <data name="Nav.Power"><value>Power &amp; Performance</value></data>
+  <data name="Nav.GamingMode"><value>Gaming Mode</value></data>
+  <data name="Nav.OfficeMode"><value>Office Mode</value></data>
+  <data name="Nav.BatteryMode"><value>Battery Mode</value></data>
+  <data name="Nav.LowEndMode"><value>Low-End Mode</value></data>
+  <data name="Nav.SafeWindowsMode"><value>Safe Windows</value></data>
+  <data name="Nav.Privacy"><value>Privacy &amp; Background Activity</value></data>
+  <data name="Nav.Cleanup"><value>Cleanup</value></data>
+  <data name="Nav.RestoreCenter"><value>Restore Center</value></data>
+  <data name="Nav.History"><value>Optimization History</value></data>
+  <data name="Nav.Settings"><value>Settings</value></data>
+  <data name="Nav.Logs"><value>Logs</value></data>
+  <data name="Nav.About"><value>About</value></data>
+  <data name="Nav.HelpSafety"><value>Help &amp; Safety</value></data>
+
+  <!-- Common -->
+  <data name="Common.Apply" xml:space="preserve"><value>Apply Selected</value></data>
+  <data name="Common.AnalyzeMyPC" xml:space="preserve"><value>Analyze My PC</value></data>
+  <data name="Common.Cancel" xml:space="preserve"><value>Cancel</value></data>
+  <data name="Common.Close" xml:space="preserve"><value>Close</value></data>
+  <data name="Common.Refresh" xml:space="preserve"><value>Refresh</value></data>
+  <data name="Common.Search" xml:space="preserve"><value>Search…</value></data>
+  <data name="Common.Restore" xml:space="preserve"><value>Restore</value></data>
+  <data name="Common.Disable" xml:space="preserve"><value>Disable</value></data>
+  <data name="Common.Enable" xml:space="preserve"><value>Enable</value></data>
+  <data name="Common.Delete" xml:space="preserve"><value>Delete</value></data>
+  <data name="Common.Export" xml:space="preserve"><value>Export</value></data>
+  <data name="Common.Yes" xml:space="preserve"><value>Yes</value></data>
+  <data name="Common.No" xml:space="preserve"><value>No</value></data>
+  <data name="Common.OK" xml:space="preserve"><value>OK</value></data>
+  <data name="Common.Status.Enabled" xml:space="preserve"><value>Enabled</value></data>
+  <data name="Common.Status.Disabled" xml:space="preserve"><value>Disabled</value></data>
+  <data name="Common.Status.Protected" xml:space="preserve"><value>Protected</value></data>
+  <data name="Common.RiskLevel" xml:space="preserve"><value>Risk level</value></data>
+  <data name="Common.EmptyState" xml:space="preserve"><value>Nothing to show yet. Run an analysis first.</value></data>
+  <data name="Common.RequiresAdmin" xml:space="preserve"><value>Requires administrator</value></data>
+  <data name="Common.ReadOnlyBanner" xml:space="preserve"><value>Read-only mode: system changes are disabled until you complete onboarding and consent.</value></data>
+  <data name="Common.UnsupportedBanner" xml:space="preserve"><value>This Windows version is not supported. Neyra Optimizer runs in read-only diagnostics mode and will not modify the system.</value></data>
+  <data name="Common.BusyOverlay" xml:space="preserve"><value>An operation is in progress…</value></data>
+
+  <!-- Onboarding -->
+  <data name="Onboarding.WelcomeTitle" xml:space="preserve"><value>Welcome to Neyra Optimizer</value></data>
+  <data name="Onboarding.WelcomeBody" xml:space="preserve"><value>Neyra Optimizer analyzes your Windows configuration and proposes safe, reversible optimizations for low-end and mid-range PCs. Nothing on your system is changed during first launch — we start with a read-only scan, then show you every proposed change before anything is applied.</value></data>
+  <data name="Onboarding.SafetyTitle" xml:space="preserve"><value>Safety first</value></data>
+  <data name="Onboarding.SafetyBullets" xml:space="preserve"><value>• A restore point / optimization snapshot is created before batches of changes
+• Every change records its previous value and can be rolled back
+• Windows Security, core services and system-critical components are always protected
+• You approve each batch; nothing runs silently in the background</value></data>
+  <data name="Onboarding.Consent" xml:space="preserve"><value>I understand that optimizing Windows modifies system configuration, and I allow Neyra Optimizer to make reviewed changes when I explicitly apply them.</value></data>
+  <data name="Onboarding.ContinueReadOnly" xml:space="preserve"><value>Continue in read-only mode</value></data>
+  <data name="Onboarding.StartScan" xml:space="preserve"><value>Agree &amp; run initial scan</value></data>
+
+  <!-- Dashboard -->
+  <data name="Dashboard.Title" xml:space="preserve"><value>Dashboard</value></data>
+  <data name="Dash.PerformanceScore" xml:space="preserve"><value>Performance Score</value></data>
+  <data name="Dash.RamUsage" xml:space="preserve"><value>RAM Usage</value></data>
+  <data name="Dash.CpuUsage" xml:space="preserve"><value>CPU Load</value></data>
+  <data name="Dash.GpuUsage" xml:space="preserve"><value>GPU Usage</value></data>
+  <data name="Dash.DiskActivity" xml:space="preserve"><value>Disk Activity</value></data>
+  <data name="Dash.Processes" xml:space="preserve"><value>Processes</value></data>
+  <data name="Dash.StartupEntries" xml:space="preserve"><value>Startup Entries</value></data>
+  <data name="Dash.FreeStorage" xml:space="preserve"><value>Free Storage (C:)</value></data>
+  <data name="Dash.Uptime" xml:space="preserve"><value>Uptime</value></data>
+  <data name="Dash.CommitCharge" xml:space="preserve"><value>Commit Charge</value></data>
+  <data name="Dash.DeviceClass" xml:space="preserve"><value>Device Class</value></data>
+  <data name="Dash.LastAnalysis" xml:space="preserve"><value>Last analysis</value></data>
+  <data name="Dash.NeverAnalyzed" xml:space="preserve"><value>Not analyzed yet — click “Analyze My PC”.</value></data>
+  <data name="Dash.MonitoringOff" xml:space="preserve"><value>Live monitoring paused (Settings → Dashboard monitoring).</value></data>
+  <data name="Band.Excellent" xml:space="preserve"><value>Excellent</value></data>
+  <data name="Band.Good" xml:space="preserve"><value>Good</value></data>
+  <data name="Band.NeedsAttention" xml:space="preserve"><value>Needs Attention</value></data>
+  <data name="Band.Critical" xml:space="preserve"><value>Critical</value></data>
+  <data name="Dash.TempUnavailable" xml:space="preserve"><value>Temperature is not exposed safely by this hardware; it is intentionally not shown rather than guessed.</value></data>
+
+  <!-- Analyze -->
+  <data name="Analyze.Title" xml:space="preserve"><value>System Analysis</value></data>
+  <data name="Analyze.RunFull" xml:space="preserve"><value>Run Full Analysis</value></data>
+  <data name="Analyze.OS" xml:space="preserve"><value>Operating System</value></data>
+  <data name="Analyze.CPU" xml:space="preserve"><value>Processor</value></data>
+  <data name="Analyze.RAM" xml:space="preserve"><value>Memory</value></data>
+  <data name="Analyze.GPU" xml:space="preserve"><value>Graphics</value></data>
+  <data name="Analyze.Storage" xml:space="preserve"><value>Storage</value></data>
+  <data name="Analyze.Battery" xml:space="preserve"><value>Battery</value></data>
+  <data name="Analyze.PowerPlan" xml:space="preserve"><value>Active Power Plan</value></data>
+  <data name="Analyze.Security" xml:space="preserve"><value>Windows Security</value></data>
+  <data name="Analyze.Elevation" xml:space="preserve"><value>Administrator Status</value></data>
+  <data name="Analyze.Elevated" xml:space="preserve"><value>Running as administrator</value></data>
+  <data name="Analyze.StandardUser" xml:space="preserve"><value>Standard user (UAC will be requested only when needed)</value></data>
+  <data name="Analyze.VMWarning" xml:space="preserve"><value>Virtual machine detected.</value></data>
+  <data name="Analyze.ClassificationReasons" xml:space="preserve"><value>Why this classification</value></data>
+  <data name="Analyze.ScanInProgress" xml:space="preserve"><value>Analyzing your PC locally… nothing is modified.</value></data>
+
+  <!-- Optimization Center -->
+  <data name="OptCenter.Title" xml:space="preserve"><value>Optimization Center</value></data>
+  <data name="OptCenter.OneClickSafe" xml:space="preserve"><value>One-Click Safe Optimization</value></data>
+  <data name="OptCenter.OneClickNote" xml:space="preserve"><value>Applies only Safe + Recommended rules validated by the Safety Engine. Creates a snapshot (and a restore point when available) first.</value></data>
+  <data name="OptCenter.PreviewChanges" xml:space="preserve"><value>Preview Changes</value></data>
+  <data name="OptCenter.ApplySelected" xml:space="preserve"><value>Apply Selected…</value></data>
+  <data name="OptCenter.SelectedCount" xml:space="preserve"><value>{0} of {1} selected</value></data>
+  <data name="OptCenter.SelectSafeRecommended" xml:space="preserve"><value>Select Safe/Recommended</value></data>
+  <data name="OptCenter.ClearSelection" xml:space="preserve"><value>Clear selection</value></data>
+  <data name="OptCenter.AdvancedWarning" xml:space="preserve"><value>Advanced items can affect stability. Review each one carefully.</value></data>
+  <data name="Cat.Safe"><value>Safe</value></data>
+  <data name="Cat.Recommended"><value>Recommended</value></data>
+  <data name="Cat.Optional"><value>Optional</value></data>
+  <data name="Cat.Advanced"><value>Advanced</value></data>
+  <data name="Cat.DoNotModify"><value>Do Not Modify</value></data>
+
+  <!-- Preview dialog -->
+  <data name="Preview.Title" xml:space="preserve"><value>Review Changes Before Applying</value></data>
+  <data name="Preview.ServicesToModify"><value>Services to modify: {0}</value></data>
+  <data name="Preview.StartupToDisable"><value>Startup entries to change: {0}</value></data>
+  <data name="Preview.TasksToDisable"><value>Scheduled tasks to change: {0}</value></data>
+  <data name="Preview.PackagesToRemove"><value>Applications to uninstall: {0}</value></data>
+  <data name="Preview.VisualEffects"><value>Visual effects to change: {0}</value></data>
+  <data name="Preview.PrivacySettings"><value>Privacy settings to apply: {0}</value></data>
+  <data name="Preview.RequiresAdmin"><value>An administrator prompt (UAC) will appear once for this batch.</value></data>
+  <data name="Preview.RestartNeeded"><value>A restart will be required afterwards.</value></data>
+  <data name="Preview.CreateRestorePoint"><value>Create a System Restore point before applying (recommended)</value></data>
+  <data name="Preview.ConfirmApply"><value>Apply now</value></data>
+  <data name="Preview.WarningUninstall"><value>Uninstalls are NOT automatically reversible. Neyra stores package info so it can help you reinstall from official sources where possible.</value></data>
+
+  <!-- Progress -->
+  <data name="Progress.PhaseRestorePoint"><value>Creating Restore Point</value></data>
+  <data name="Progress.Applying"><value>Applying changes</value></data>
+  <data name="Progress.Verifying"><value>Verifying Changes</value></data>
+  <data name="Progress.Completed"><value>Completed</value></data>
+
+  <!-- Result -->
+  <data name="Result.SuccessTitle"><value>Optimization applied</value></data>
+  <data name="Result.PartialTitle"><value>Finished with warnings</value></data>
+  <data name="Result.AbortedTitle"><value>Operation aborted</value></data>
+  <data name="Result.AppliedCount"><value>Applied: {0}</value></data>
+  <data name="Result.FailedCount"><value>Failed: {0}</value></data>
+  <data name="Result.SkippedCount"><value>Skipped: {0}</value></data>
+  <data name="Result.RestorePointFailed"><value>The System Restore point could not be created:
+
+{0}
+
+Risky changes were NOT applied. You can retry, or continue without a restore point (only truly safe, reversible items are suggested then).</value></data>
+  <data name="Result.ContinueWithoutRP"><value>Continue without restore point</value></data>
+  <data name="Result.MeasureNow"><value>Measure after-state now</value></data>
+  <data name="Result.RestartRequired"><value>Restart required for some changes to take full effect.</value></data>
+  <data name="Result.RestartNow"><value>Restart Now</value></data>
+  <data name="Result.RestartLater"><value>Later</value></data>
+  <data name="Result.NoImprovement"><value>Honest result: no significant improvement was measured. This can happen when the system was already well configured or hardware is the limiting factor.</value></data>
+
+  <!-- Startup page -->
+  <data name="Startup.Title"><value>Startup Manager</value></data>
+  <data name="Startup.ColumnName"><value>Name</value></data>
+  <data name="Startup.ColumnPublisher"><value>Publisher</value></data>
+  <data name="Startup.ColumnSource"><value>Source</value></data>
+  <data name="Startup.ColumnImpact"><value>Impact</value></data>
+  <data name="Startup.ColumnStatus"><value>Status</value></data>
+
+  <!-- Services page -->
+  <data name="Services.Title"><value>Services Manager</value></data>
+  <data name="Services.SetManual"><value>Set Manual</value></data>
+  <data name="Services.SetAuto"><value>Set Automatic</value></data>
+  <data name="Services.SetDisabled"><value>Disable Service</value></data>
+  <data name="Services.ProtectedHint"><value>Security/core services are protected by the Safety Engine and cannot be modified here.</value></data>
+
+  <!-- Debloat -->
+  <data name="Debloat.Title"><value>Debloat — App Removal</value></data>
+  <data name="Debloat.SelectAllSafe"><value>Select all optional</value></data>
+  <data name="Debloat.UninstallWarning"><value>You are about to uninstall {0} app(s). Uninstallation cannot be rolled back automatically by snapshots. Continue?</value></data>
+  <data name="Debloat.Reinstallable"><value>Can be reinstalled from Microsoft Store</value></data>
+  <data name="Debloat.NotReinstallable"><value>Reinstall source unknown — removal is effectively permanent.</value></data>
+
+  <!-- Background apps -->
+  <data name="Background.Title"><value>Background Apps &amp; Activity</value></data>
+  <data name="Background.ProcessesHeader"><value>User processes (system/security processes are never killable)</value></data>
+  <data name="Background.ToggleHeader"><value>Apps with controllable background execution</value></data>
+  <data name="Background.EndTask"><value>End task</value></data>
+
+  <!-- Scheduled tasks -->
+  <data name="Tasks.Title"><value>Scheduled Tasks Manager</value></data>
+  <data name="Tasks.LastRun"><value>Last run</value></data>
+  <data name="Tasks.NextRun"><value>Next run</value></data>
+  <data name="Tasks.NeverRun"><value>Never</value></data>
+
+  <!-- Visual effects -->
+  <data name="Visuals.Title"><value>Visual Effects Optimizer</value></data>
+  <data name="Visuals.BestAppearance"><value>Best Appearance</value></data>
+  <data name="Visuals.Balanced"><value>Balanced</value></data>
+  <data name="Visuals.BestPerformance"><value>Best Performance</value></data>
+  <data name="Visuals.SignOutNote"><value>Items marked with • take effect after sign-out/sign-in.</value></data>
+
+  <!-- Power -->
+  <data name="Power.Title"><value>Power &amp; Performance</value></data>
+  <data name="Power.Plans"><value>Power Plans</value></data>
+  <data name="Power.Overlay"><value>Power Mode (overlay)</value></data>
+  <data name="Power.OverlayUnsupported"><value>Power mode overlay is not supported on this device/build.</value></data>
+  <data name="Power.Battery"><value>Battery</value></data>
+  <data name="Power.Charging"><value>Charging</value></data>
+  <data name="Power.OnBattery"><value>On battery</value></data>
+  <data name="Power.Health"><value>Health</value></data>
+
+  <!-- Modes -->
+  <data name="Modes.EnableMode"><value>Enable This Mode</value></data>
+  <data name="Modes.PluggedInOnly"><value>Requires charger connected.</value></data>
+  <data name="Modes.NotAvailableHere"><value>This mode is not available on this device.</value></data>
+  <data name="Modes.WhatWillChange"><value>What will change</value></data>
+  <data name="Modes.GamingNote"><value>Antivirus, firewall, network, audio, drivers and Windows Update are never disabled in Gaming Mode.</value></data>
+  <data name="Modes.OfficeNote"><value>Printer/scanner services stay untouched when printers are detected.</value></data>
+
+  <!-- Privacy -->
+  <data name="Privacy.Title"><value>Privacy &amp; Background Activity</value></data>
+  <data name="Privacy.Note"><value>These toggles never touch Windows Security components.</value></data>
+
+  <!-- Cleanup -->
+  <data name="Cleanup.Title"><value>Storage Cleanup</value></data>
+  <data name="Cleanup.Scan"><value>Scan (dry-run)</value></data>
+  <data name="Cleanup.DeleteSelected"><value>Clean Selected</value></data>
+  <data name="Cleanup.Confirm"><value>Delete the selected temporary files? Estimated: {0}. Personal documents are never touched.</value></data>
+  <data name="Cleanup.FreedReport"><value>Cleanup finished. Freed: {0}</value></data>
+
+  <!-- Restore center -->
+  <data name="Restore.Title"><value>Restore Center</value></data>
+  <data name="Restore.SnapshotList"><value>Optimization Snapshots</value></data>
+  <data name="Restore.RestoreConfirm"><value>Roll back all {0} recorded changes from this snapshot?</value></data>
+  <data name="Restore.IntegrityBad"><value>This snapshot failed its integrity check and cannot be used.</value></data>
+  <data name="Restore.EmergencyOpen"><value>Emergency Restore…</value></data>
+  <data name="Restore.RestoredOk"><value>Rollback finished: {0} restored, {1} failed.</value></data>
+
+  <!-- History -->
+  <data name="History.Title"><value>Optimization History</value></data>
+  <data name="History.Details"><value>Details</value></data>
+
+  <!-- Settings -->
+  <data name="Settings.Title"><value>Settings</value></data>
+  <data name="Settings.Theme"><value>Theme</value></data>
+  <data name="Settings.Language"><value>Language</value></data>
+  <data name="Settings.RefreshSeconds"><value>Dashboard refresh interval (seconds)</value></data>
+  <data name="Settings.Monitoring"><value>Enable dashboard live monitoring</value></data>
+  <data name="Settings.AutoScan"><value>Automatic scan at startup</value></data>
+  <data name="Settings.ConfirmBeforeApply"><value>Always confirm before applying changes</value></data>
+  <data name="Settings.RestorePointDefault"><value>Create restore point before batches (recommended)</value></data>
+  <data name="Settings.LoggingLevel"><value>Logging level</value></data>
+  <data name="Settings.Notifications"><value>Show notifications</value></data>
+  <data name="Settings.AdvancedMode"><value>Advanced Mode (shows Advanced catalog with extra warnings)</value></data>
+  <data name="Settings.AdvancedWarning"><value>Advanced tweaks are hidden behind explicit confirmation because they can affect stability.</value></data>
+  <data name="Settings.UpdateSection"><value>Updates</value></data>
+  <data name="Settings.UpdateNone"><value>Neyra Optimizer 1.0 has no update server. When a signed update channel exists, checking will be opt-in here.</value></data>
+  <data name="Settings.UninstallSection"><value>Uninstall assistant</value></data>
+  <data name="Settings.UninstallKeepOption"><value>Keep current optimizations (default): uninstalling the app leaves your Windows settings as they are now.</value></data>
+  <data name="Settings.UninstallRestoreAll"><value>Attempt to restore ALL Neyra Optimizer changes now (uses snapshots)</value></data>
+  <data name="Settings.Saved"><value>Settings saved.</value></data>
+  <data name="Settings.DataFolder"><value>Data folder (snapshots, history, logs)</value></data>
+
+  <!-- Logs -->
+  <data name="Logs.Title"><value>Logs</value></data>
+  <data name="Logs.FilterAll"><value>All</value></data>
+  <data name="Logs.OpenFolder"><value>Open log folder</value></data>
+
+  <!-- About -->
+  <data name="About.Title"><value>About</value></data>
+  <data name="About.Version"><value>Version {0}</value></data>
+  <data name="About.WhatItIs"><value>Neyra Optimizer is a local performance tuning utility for Windows 10 and Windows 11.</value></data>
+  <data name="About.WhatItIsNot"><value>It is NOT an antivirus, NOT a replacement for Windows Security, NOT a driver updater, and NOT an overclocking tool. It makes no guaranteed performance claims; every reported number comes from actual measurements on your machine.</value></data>
+  <data name="About.PrivacyNote"><value>Neyra Optimizer works fully offline. No telemetry is sent anywhere. Support bundles contain anonymized technical info only and are generated only when you ask.</value></data>
+
+  <!-- Help/Safety -->
+  <data name="Help.Title"><value>Help &amp; Safety</value></data>
+  <data name="Help.HowRollbackWorks"><value>How rollback works</value></data>
+  <data name="Help.RollbackBody"><value>Before any batch, Neyra writes an Optimization Snapshot listing every previous value. Restore Center can reverse those exact changes individually. If System Restore is enabled a Windows restore point is also offered. Snapshots live under ProgramData\NeyraOptimizer\Snapshots with SHA-256 integrity manifests, so Emergency Restore works even if other app state is damaged.</value></data>
+  <data name="Help.WhatWeNeverTouch"><value>What Neyra will never modify</value></data>
+  <data name="Help.NeverTouchBody"><value>Windows Security / Defender / Firewall, RPC and core boot services, storage/display/audio/input drivers, authentication, Windows Update security dependencies and recovery components. Rules targeting these are rejected before reaching any Windows API.</value></data>
+  <data name="Help.SupportBundle"><value>Create support bundle</value></data>
+  <data name="Help.BundleContents"><value>The bundle contains: anonymized OS/CPU/RAM/disk summary, recent structured logs, optimization history metadata, snapshot metadata (no credentials, no personal files). Review the list before exporting.</value></data>
+  <data name="Help.DiagMode"><value>Restart in Diagnostics (read-only) mode</value></data>
+
+  <!-- Emergency -->
+  <data name="Emergency.Title"><value>Emergency Restore</value></data>
+  <data name="Emergency.Body"><value>This minimal window reads snapshots directly from disk with integrity checks. It stays usable even if the main interface has problems.</value></data>
+
+  <!-- Crash recovery -->
+  <data name="Recovery.Title"><value>Incomplete operation detected</value></data>
+  <data name="Recovery.Body"><value>Neyra Optimizer appears to have exited during “{0}” ({1}/{2} steps done). No further changes will be made automatically. What would you like to do?</value></data>
+  <data name="Recovery.RollbackBtn"><value>Roll back applied changes</value></data>
+  <data name="Recovery.DismissBtn"><value>Dismiss (keep changes)</value></data>
+
+  <!-- Notifications -->
+  <data name="Notify.Info"><value>Information</value></data>
+  <data name="Notify.Success"><value>Success</value></data>
+  <data name="Notify.Warning"><value>Warning</value></data>
+  <data name="Notify.Error"><value>Error</value></data>
+  <data name="Notify.RestartRequired"><value>Restart required</value></data>
+</root>
