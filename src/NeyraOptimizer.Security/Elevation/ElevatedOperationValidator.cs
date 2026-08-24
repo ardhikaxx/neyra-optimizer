@@ -83,6 +83,16 @@ public static partial class ElevatedOperationValidator
                 }
                 return (true, string.Empty);
 
+            case ElevatedOperationKind.ApplyBatch:
+                if (request.Operations.Count == 0) return (false, "Batch is empty.");
+                if (request.Operations.Count > 64) return (false, "Too many operations in one batch.");
+                foreach (var child in request.Operations)
+                {
+                    var (childValid, childError) = Validate(child);
+                    if (!childValid) return (false, $"Batch item invalid: {childError}");
+                }
+                return (true, string.Empty);
+
             default:
                 return (false, $"Unknown operation kind '{request.Kind}'.");
         }
