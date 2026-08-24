@@ -14,6 +14,8 @@ public enum ElevatedOperationKind
     RemoveProvisionedPackage = 5,
     DeleteDeliveryOptimizationCache = 6,
     ApplyRegistryWrites = 7,
+    /// <summary>Runs a list of child operations under ONE elevation prompt. Children may nest.</summary>
+    ApplyBatch = 8,
 }
 
 /// <summary>
@@ -41,7 +43,12 @@ public sealed class ElevatedOperationRequest
 
     // Registry batch
     public List<ElevatedRegistryWrite> RegistryWrites { get; init; } = new();
+
+    // Nested batch (Kind == ApplyBatch). Depth-limited and recursively validated.
+    public List<ElevatedOperationRequest> Operations { get; init; } = new();
 }
+
+public sealed record BatchOperationOutcome(ElevatedOperationRequest Request, ElevatedOperationResult Result);
 
 public sealed class ElevatedRegistryWrite
 {
