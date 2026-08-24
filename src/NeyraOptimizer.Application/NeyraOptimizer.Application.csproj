@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>NeyraOptimizer.Application</RootNamespace>
+    <Description>Neyra Optimizer application layer: use-case orchestration over optimization, diagnostics and persistence.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NeyraOptimizer.Domain\NeyraOptimizer.Domain.csproj" />
+    <ProjectReference Include="..\NeyraOptimizer.Diagnostics\NeyraOptimizer.Diagnostics.csproj" />
+    <ProjectReference Include="..\NeyraOptimizer.Infrastructure\NeyraOptimizer.Infrastructure.csproj" />
+    <ProjectReference Include="..\NeyraOptimizer.Optimization\NeyraOptimizer.Optimization.csproj" />
+    <ProjectReference Include="..\NeyraOptimizer.Security\NeyraOptimizer.Security.csproj" />
+  </ItemGroup>
+
+</Project>
