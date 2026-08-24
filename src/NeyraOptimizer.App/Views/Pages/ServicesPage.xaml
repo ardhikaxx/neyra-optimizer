@@ -1,0 +1,66 @@
+<UserControl x:Class="NeyraOptimizer.App.Views.Pages.ServicesPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:NeyraOptimizer.App.Localization">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="{loc:Loc Services.Title}" Style="{StaticResource PageTitle}" Margin="0,0,0,4"/>
+        <TextBlock Grid.Row="1" Text="{loc:Loc Services.ProtectedHint}" Style="{StaticResource MutedText}" Margin="0,0,0,10"/>
+
+        <Border Grid.Row="2" Style="{StaticResource CardBorder}" Padding="12,10" Margin="0,0,0,10">
+            <DockPanel>
+                <Button DockPanel.Dock="Right" Style="{StaticResource SecondaryButton}" Command="{Binding SetDisabledCommand}"
+                        Content="{loc:Loc Services.SetDisabled}" MinWidth="120" Margin="8,0,0,0"/>
+                <Button DockPanel.Dock="Right" Style="{StaticResource SecondaryButton}" Command="{Binding SetManualCommand}"
+                        Content="{loc:Loc Services.SetManual}" MinWidth="110" Margin="8,0,0,0"/>
+                <Button DockPanel.Dock="Right" Style="{StaticResource SecondaryButton}" Command="{Binding SetAutoCommand}"
+                        Content="{loc:Loc Services.SetAuto}" MinWidth="110" Margin="8,0,0,0"/>
+                <ComboBox Width="130" VerticalAlignment="Center" SelectedItem="{Binding FilterMode}"
+                          Style="{StaticResource NeyraComboBox}">
+                    <sys:String xmlns:sys="clr-namespace:System;assembly=mscorlib">All</sys:String>
+                    <sys:String xmlns:sys="clr-namespace:System;assembly=mscorlib">Running</sys:String>
+                    <sys:String xmlns:sys="clr-namespace:System;assembly=mscorlib">Automatic</sys:String>
+                    <sys:String xmlns:sys="clr-namespace:System;assembly=mscorlib">Optional</sys:String>
+                </ComboBox>
+                <TextBox Width="240" VerticalAlignment="Center" Margin="8,0,0,0" Style="{StaticResource NeyraTextBox}"
+                         Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
+            </DockPanel>
+        </Border>
+
+        <ListBox Grid.Row="3" ItemsSource="{Binding VisibleRows}" SelectedItem="{Binding SelectedRow}"
+                 Style="{StaticResource NeyraListBox}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Style="{StaticResource RowBorder}">
+                        <StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="140"/>
+                                    <ColumnDefinition Width="90"/>
+                                    <ColumnDefinition Width="70"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding DisplayName}" FontWeight="SemiBold"/>
+                                    <TextBlock Text="{Binding ServiceName}" FontSize="11.5"
+                                               Foreground="{DynamicResource Brush.TextMuted}"/>
+                                </StackPanel>
+                                <TextBlock Grid.Column="1" Text="{Binding StartModeText}" VerticalAlignment="Center"
+                                           Foreground="{DynamicResource Brush.TextSecondary}"/>
+                                <TextBlock Grid.Column="2" Text="{Binding StatusText}" VerticalAlignment="Center"
+                                           Foreground="{DynamicResource Brush.TextSecondary}"/>
+                                <TextBlock Grid.Column="3" Text="{Binding Protected}" Visibility="Collapsed"/>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>
