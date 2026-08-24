@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>NeyraOptimizer.Domain</RootNamespace>
+    <Description>Neyra Optimizer domain: models, abstractions (ports), and pure engines. No platform dependencies.</Description>
+  </PropertyGroup>
+
+</Project>
