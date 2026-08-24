@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <!-- Shell -->
+  <data name="App.Title" xml:space="preserve"><value>Neyra Optimizer</value></data>
+  <data name="App.Subtitle" xml:space="preserve"><value>Performance Tuning Tool untuk Windows 10 &amp; 11</value></data>
+  <data name="Nav.Dashboard"><value>Dashboard</value></data>
+  <data name="Nav.Analyze"><value>Analisis</value></data>
+  <data name="Nav.OptimizationCenter"><value>Pusat Optimasi</value></data>
+  <data name="Nav.Debloat"><value>Debloat</value></data>
+  <data name="Nav.Services"><value>Services</value></data>
+  <data name="Nav.Startup"><value>Startup</value></data>
+  <data name="Nav.BackgroundApps"><value>Aplikasi Background</value></data>
+  <data name="Nav.ScheduledTasks"><value>Tugas Terjadwal</value></data>
+  <data name="Nav.VisualEffects"><value>Efek Visual</value></data>
+  <data name="Nav.Power"><value>Power &amp; Performa</value></data>
+  <data name="Nav.GamingMode"><value>Mode Gaming</value></data>
+  <data name="Nav.OfficeMode"><value>Mode Office</value></data>
+  <data name="Nav.BatteryMode"><value>Mode Baterai</value></data>
+  <data name="Nav.LowEndMode"><value>Mode Low-End</value></data>
+  <data name="Nav.SafeWindowsMode"><value>Safe Windows</value></data>
+  <data name="Nav.Privacy"><value>Privasi &amp; Aktivitas Background</value></data>
+  <data name="Nav.Cleanup"><value>Pembersihan</value></data>
+  <data name="Nav.RestoreCenter"><value>Pusat Restore</value></data>
+  <data name="Nav.History"><value>Riwayat Optimasi</value></data>
+  <data name="Nav.Settings"><value>Pengaturan</value></data>
+  <data name="Nav.Logs"><value>Log</value></data>
+  <data name="Nav.About"><value>Tentang</value></data>
+  <data name="Nav.HelpSafety"><value>Bantuan &amp; Keamanan</value></data>
+
+  <!-- Common -->
+  <data name="Common.Apply" xml:space="preserve"><value>Terapkan Pilihan</value></data>
+  <data name="Common.AnalyzeMyPC" xml:space="preserve"><value>Analisis PC Saya</value></data>
+  <data name="Common.Cancel" xml:space="preserve"><value>Batal</value></data>
+  <data name="Common.Close" xml:space="preserve"><value>Tutup</value></data>
+  <data name="Common.Refresh" xml:space="preserve"><value>Muat Ulang</value></data>
+  <data name="Common.Search" xml:space="preserve"><value>Cari…</value></data>
+  <data name="Common.Restore" xml:space="preserve"><value>Restore</value></data>
+  <data name="Common.Disable" xml:space="preserve"><value>Nonaktifkan</value></data>
+  <data name="Common.Enable" xml:space="preserve"><value>Aktifkan</value></data>
+  <data name="Common.Delete" xml:space="preserve"><value>Hapus</value></data>
+  <data name="Common.Export" xml:space="preserve"><value>Ekspor</value></data>
+  <data name="Common.Yes" xml:space="preserve"><value>Ya</value></data>
+  <data name="Common.No" xml:space="preserve"><value>Tidak</value></data>
+  <data name="Common.OK" xml:space="preserve"><value>OK</value></data>
+  <data name="Common.Status.Enabled" xml:space="preserve"><value>Aktif</value></data>
+  <data name="Common.Status.Disabled" xml:space="preserve"><value>Nonaktif</value></data>
+  <data name="Common.Status.Protected" xml:space="preserve"><value>Dilindungi</value></data>
+  <data name="Common.RiskLevel" xml:space="preserve"><value>Tingkat risiko</value></data>
+  <data name="Common.EmptyState" xml:space="preserve"><value>Belum ada data. Jalankan analisis terlebih dahulu.</value></data>
+  <data name="Common.RequiresAdmin" xml:space="preserve"><value>Butuh administrator</value></data>
+  <data name="Common.ReadOnlyBanner" xml:space="preserve"><value>Mode baca-saja: perubahan sistem dinonaktifkan sampai Anda menyelesaikan onboarding dan memberi persetujuan.</value></data>
+  <data name="Common.UnsupportedBanner" xml:space="preserve"><value>Versi Windows ini tidak didukung. Neyra Optimizer berjalan dalam mode diagnostik baca-saja dan tidak akan mengubah sistem.</value></data>
+  <data name="Common.BusyOverlay" xml:space="preserve"><value>Suatu operasi sedang berjalan…</value></data>
+
+  <!-- Onboarding -->
+  <data name="Onboarding.WelcomeTitle" xml:space="preserve"><value>Selamat datang di Neyra Optimizer</value></data>
+  <data name="Onboarding.WelcomeBody" xml:space="preserve"><value>Neyra Optimizer menganalisis konfigurasi Windows Anda dan mengusulkan optimasi yang aman dan dapat dibatalkan untuk PC low-end maupun mid-range. Tidak ada yang diubah saat peluncuran pertama — kita mulai dengan scan baca-saja, lalu setiap perubahan ditampilkan sebelum diterapkan.</value></data>
+  <data name="Onboarding.SafetyTitle" xml:space="preserve"><value>Keamanan prioritas utama</value></data>
+  <data name="Onboarding.SafetyBullets" xml:space="preserve"><value>• Restore point / snapshot optimasi dibuat sebelum batch perubahan
+• Setiap perubahan menyimpan nilai sebelumnya dan dapat di-rollback
+• Windows Security, service inti, dan komponen kritis selalu dilindungi
+• Anda menyetujui setiap batch; tidak ada yang berjalan diam-diam di background</value></data>
+  <data name="Onboarding.Consent" xml:space="preserve"><value>Saya memahami bahwa optimasi mengubah konfigurasi sistem, dan saya mengizinkan Neyra Optimizer melakukan perubahan yang sudah saya tinjau saat saya menerapkannya secara eksplisit.</value></data>
+  <data name="Onboarding.ContinueReadOnly" xml:space="preserve"><value>Lanjut dalam mode baca-saja</value></data>
+  <data name="Onboarding.StartScan" xml:space="preserve"><value>Setuju &amp; jalankan scan awal</value></data>
+
+  <!-- Dashboard -->
+  <data name="Dashboard.Title" xml:space="preserve"><value>Dashboard</value></data>
+  <data name="Dash.PerformanceScore" xml:space="preserve"><value>Skor Performa</value></data>
+  <data name="Dash.RamUsage" xml:space="preserve"><value>Penggunaan RAM</value></data>
+  <data name="Dash.CpuUsage" xml:space="preserve"><value>Beban CPU</value></data>
+  <data name="Dash.GpuUsage" xml:space="preserve"><value>Penggunaan GPU</value></data>
+  <data name="Dash.DiskActivity" xml:space="preserve"><value>Aktivitas Disk</value></data>
+  <data name="Dash.Processes" xml:space="preserve"><value>Proses</value></data>
+  <data name="Dash.StartupEntries" xml:space="preserve"><value>Entry Startup</value></data>
+  <data name="Dash.FreeStorage" xml:space="preserve"><value>Ruang Bebas (C:)</value></data>
+  <data name="Dash.Uptime" xml:space="preserve"><value>Uptime</value></data>
+  <data name="Dash.CommitCharge" xml:space="preserve"><value>Commit Charge</value></data>
+  <data name="Dash.DeviceClass" xml:space="preserve"><value>Kelas Perangkat</value></data>
+  <data name="Dash.LastAnalysis" xml:space="preserve"><value>Analisis terakhir</value></data>
+  <data name="Dash.NeverAnalyzed" xml:space="preserve"><value>Belum dianalisis — klik “Analisis PC Saya”.</value></data>
+  <data name="Dash.MonitoringOff" xml:space="preserve"><value>Monitoring live dijeda (Pengaturan → Monitoring dashboard).</value></data>
+  <data name="Band.Excellent" xml:space="preserve"><value>Sangat Baik</value></data>
+  <data name="Band.Good" xml:space="preserve"><value>Baik</value></data>
+  <data name="Band.NeedsAttention" xml:space="preserve"><value>Perlu Perhatian</value></data>
+  <data name="Band.Critical" xml:space="preserve"><value>Kritis</value></data>
+  <data name="Dash.TempUnavailable" xml:space="preserve"><value>Suhu tidak diekspos secara aman oleh hardware ini; sengaja tidak ditampilkan daripada menebak.</value></data>
+
+  <!-- Analyze -->
+  <data name="Analyze.Title" xml:space="preserve"><value>Analisis Sistem</value></data>
+  <data name="Analyze.RunFull" xml:space="preserve"><value>Jalankan Analisis Lengkap</value></data>
+  <data name="Analyze.OS" xml:space="preserve"><value>Sistem Operasi</value></data>
+  <data name="Analyze.CPU" xml:space="preserve"><value>Prosesor</value></data>
+  <data name="Analyze.RAM" xml:space="preserve"><value>Memori</value></data>
+  <data name="Analyze.GPU" xml:space="preserve"><value>Grafis</value></data>
+  <data name="Analyze.Storage" xml:space="preserve"><value>Penyimpanan</value></data>
+  <data name="Analyze.Battery" xml:space="preserve"><value>Baterai</value></data>
+  <data name="Analyze.PowerPlan" xml:space="preserve"><value>Power Plan Aktif</value></data>
+  <data name="Analyze.Security" xml:space="preserve"><value>Windows Security</value></data>
+  <data name="Analyze.Elevation" xml:space="preserve"><value>Status Administrator</value></data>
+  <data name="Analyze.Elevated" xml:space="preserve"><value>Berjalan sebagai administrator</value></data>
+  <data name="Analyze.StandardUser" xml:space="preserve"><value>User standar (UAC diminta hanya saat diperlukan)</value></data>
+  <data name="Analyze.VMWarning" xml:space="preserve"><value>Virtual machine terdeteksi.</value></data>
+  <data name="Analyze.ClassificationReasons" xml:space="preserve"><value>Alasan klasifikasi ini</value></data>
+  <data name="Analyze.ScanInProgress" xml:space="preserve"><value>Menganalisis PC Anda secara lokal… tidak ada yang diubah.</value></data>
+
+  <!-- Optimization Center -->
+  <data name="OptCenter.Title" xml:space="preserve"><value>Pusat Optimasi</value></data>
+  <data name="OptCenter.OneClickSafe" xml:space="preserve"><value>One-Click Safe Optimization</value></data>
+  <data name="OptCenter.OneClickNote" xml:space="preserve"><value>Hanya menerapkan aturan Safe + Recommended yang lolos Safety Engine. Snapshot (dan restore point bila tersedia) dibuat lebih dulu.</value></data>
+  <data name="OptCenter.PreviewChanges" xml:space="preserve"><value>Pratinjau Perubahan</value></data>
+  <data name="OptCenter.ApplySelected" xml:space="preserve"><value>Terapkan Pilihan…</value></data>
+  <data name="OptCenter.SelectedCount" xml:space="preserve"><value>{0} dari {1} dipilih</value></data>
+  <data name="OptCenter.SelectSafeRecommended" xml:space="preserve"><value>Pilih Safe/Recommended</value></data>
+  <data name="OptCenter.ClearSelection" xml:space="preserve"><value>Kosongkan pilihan</value></data>
+  <data name="OptCenter.AdvancedWarning" xml:space="preserve"><value>Item Advanced dapat mempengaruhi stabilitas. Tinjau dengan hati-hati.</value></data>
+  <data name="Cat.Safe"><value>Safe</value></data>
+  <data name="Cat.Recommended"><value>Recommended</value></data>
+  <data name="Cat.Optional"><value>Optional</value></data>
+  <data name="Cat.Advanced"><value>Advanced</value></data>
+  <data name="Cat.DoNotModify"><value>Jangan Diubah</value></data>
+
+  <!-- Preview dialog -->
+  <data name="Preview.Title" xml:space="preserve"><value>Tinjau Perubahan Sebelum Diterapkan</value></data>
+  <data name="Preview.ServicesToModify"><value>Service yang diubah: {0}</value></data>
+  <data name="Preview.StartupToDisable"><value>Entry startup yang diubah: {0}</value></data>
+  <data name="Preview.TasksToDisable"><value>Tugas terjadwal yang diubah: {0}</value></data>
+  <data name="Preview.PackagesToRemove"><value>Aplikasi yang di-uninstall: {0}</value></data>
+  <data name="Preview.VisualEffects"><value>Efek visual yang diubah: {0}</value></data>
+  <data name="Preview.PrivacySettings"><value>Pengaturan privasi: {0}</value></data>
+  <data name="Preview.RequiresAdmin"><value>Permintaan administrator (UAC) akan muncul sekali untuk batch ini.</value></data>
+  <data name="Preview.RestartNeeded"><value>Restart akan diperlukan setelahnya.</value></data>
+  <data name="Preview.CreateRestorePoint"><value>Buat System Restore point sebelum menerapkan (disarankan)</value></data>
+  <data name="Preview.ConfirmApply"><value>Terapkan sekarang</value></data>
+  <data name="Preview.WarningUninstall"><value>Uninstall TIDAK dapat dibalik otomatis oleh snapshot. Neyra menyimpan info paket agar dapat membantu reinstall dari sumber resmi bila memungkinkan.</value></data>
+
+  <!-- Progress -->
+  <data name="Progress.PhaseRestorePoint"><value>Membuat Restore Point</value></data>
+  <data name="Progress.Applying"><value>Menerapkan perubahan</value></data>
+  <data name="Progress.Verifying"><value>Memverifikasi Perubahan</value></data>
+  <data name="Progress.Completed"><value>Selesai</value></data>
+
+  <!-- Result -->
+  <data name="Result.SuccessTitle"><value>Optimasi diterapkan</value></data>
+  <data name="Result.PartialTitle"><value>Selesai dengan peringatan</value></data>
+  <data name="Result.AbortedTitle"><value>Operasi dibatalkan</value></data>
+  <data name="Result.AppliedCount"><value>Diterapkan: {0}</value></data>
+  <data name="Result.FailedCount"><value>Gagal: {0}</value></data>
+  <data name="Result.SkippedCount"><value>Dilewati: {0}</value></data>
+  <data name="Result.RestorePointFailed"><value>System Restore point tidak dapat dibuat:
+
+{0}
+
+Perubahan berisiko TIDAK diterapkan. Anda bisa mencoba lagi, atau lanjut tanpa restore point (hanya item yang benar-benar aman dan reversible yang disarankan).</value></data>
+  <data name="Result.ContinueWithoutRP"><value>Lanjut tanpa restore point</value></data>
+  <data name="Result.MeasureNow"><value>Ukur kondisi sesudah sekarang</value></data>
+  <data name="Result.RestartRequired"><value>Restart diperlukan agar beberapa perubahan berlaku penuh.</value></data>
+  <data name="Result.RestartNow"><value>Restart Sekarang</value></data>
+  <data name="Result.RestartLater"><value>Nanti</value></data>
+  <data name="Result.NoImprovement"><value>Hasil jujur: tidak ada peningkatan signifikan yang terukur. Ini bisa terjadi bila sistem sudah cukup terkonfigurasi atau hardware menjadi batasannya.</value></data>
+
+  <!-- Startup page -->
+  <data name="Startup.Title"><value>Startup Manager</value></data>
+  <data name="Startup.ColumnName"><value>Nama</value></data>
+  <data name="Startup.ColumnPublisher"><value>Publisher</value></data>
+  <data name="Startup.ColumnSource"><value>Sumber</value></data>
+  <data name="Startup.ColumnImpact"><value>Dampak</value></data>
+  <data name="Startup.ColumnStatus"><value>Status</value></data>
+
+  <!-- Services page -->
+  <data name="Services.Title"><value>Services Manager</value></data>
+  <data name="Services.SetManual"><value>Set Manual</value></data>
+  <data name="Services.SetAuto"><value>Set Otomatis</value></data>
+  <data name="Services.SetDisabled"><value>Nonaktifkan Service</value></data>
+  <data name="Services.ProtectedHint"><value>Service keamanan/inti dilindungi Safety Engine dan tidak dapat diubah di sini.</value></data>
+
+  <!-- Debloat -->
+  <data name="Debloat.Title"><value>Debloat — Hapus Aplikasi</value></data>
+  <data name="Debloat.SelectAllSafe"><value>Pilih semua optional</value></data>
+  <data name="Debloat.UninstallWarning"><value>Anda akan meng-uninstall {0} aplikasi. Penghapusan tidak dapat di-rollback otomatis oleh snapshot. Lanjutkan?</value></data>
+  <data name="Debloat.Reinstallable"><value>Dapat di-reinstall dari Microsoft Store</value></data>
+  <data name="Debloat.NotReinstallable"><value>Sumber reinstall tidak diketahui — penghapusan bersifat permanen.</value></data>
+
+  <!-- Background apps -->
+  <data name="Background.Title"><value>Aplikasi &amp; Aktivitas Background</value></data>
+  <data name="Background.ProcessesHeader"><value>Proses user (proses system/security tidak bisa diakhiri)</value></data>
+  <data name="Background.ToggleHeader"><value>Aplikasi dengan eksekusi background yang bisa dikontrol</value></data>
+  <data name="Background.EndTask"><value>Akhiri tugas</value></data>
+
+  <!-- Scheduled tasks -->
+  <data name="Tasks.Title"><value>Tugas Terjadwal</value></data>
+  <data name="Tasks.LastRun"><value>Terakhir jalan</value></data>
+  <data name="Tasks.NextRun"><value>Jalan berikutnya</value></data>
+  <data name="Tasks.NeverRun"><value>Belum pernah</value></data>
+
+  <!-- Visual effects -->
+  <data name="Visuals.Title"><value>Efek Visual</value></data>
+  <data name="Visuals.BestAppearance"><value>Tampilan Terbaik</value></data>
+  <data name="Visuals.Balanced"><value>Seimbang</value></data>
+  <data name="Visuals.BestPerformance"><value>Performa Terbaik</value></data>
+  <data name="Visuals.SignOutNote"><value>Item bertanda • baru berlaku setelah sign-out/sign-in.</value></data>
+
+  <!-- Power -->
+  <data name="Power.Title"><value>Power &amp; Performa</value></data>
+  <data name="Power.Plans"><value>Power Plans</value></data>
+  <data name="Power.Overlay"><value>Power Mode (overlay)</value></data>
+  <data name="Power.OverlayUnsupported"><value>Power mode overlay tidak didukung di perangkat/build ini.</value></data>
+  <data name="Power.Battery"><value>Baterai</value></data>
+  <data name="Power.Charging"><value>Mengisi daya</value></data>
+  <data name="Power.OnBattery"><value>Menggunakan baterai</value></data>
+  <data name="Power.Health"><value>Kesehatan</value></data>
+
+  <!-- Modes -->
+  <data name="Modes.EnableMode"><value>Aktifkan Mode Ini</value></data>
+  <data name="Modes.PluggedInOnly"><value>Membutuhkan charger terpasang.</value></data>
+  <data name="Modes.NotAvailableHere"><value>Mode ini tidak tersedia di perangkat ini.</value></data>
+  <data name="Modes.WhatWillChange"><value>Yang akan diubah</value></data>
+  <data name="Modes.GamingNote"><value>Antivirus, firewall, jaringan, audio, driver, dan Windows Update tidak pernah dimatikan di Mode Gaming.</value></data>
+  <data name="Modes.OfficeNote"><value>Service printer/scanner tetap aman saat printer terdeteksi.</value></data>
+
+  <!-- Privacy -->
+  <data name="Privacy.Title"><value>Privasi &amp; Aktivitas Background</value></data>
+  <data name="Privacy.Note"><value>Sakelar di sini tidak pernah menyentuh komponen Windows Security.</value></data>
+
+  <!-- Cleanup -->
+  <data name="Cleanup.Title"><value>Pembersihan Penyimpanan</value></data>
+  <data name="Cleanup.Scan"><value>Pindai (dry-run)</value></data>
+  <data name="Cleanup.DeleteSelected"><value>Bersihkan Pilihan</value></data>
+  <data name="Cleanup.Confirm"><value>Hapus file sementara terpilih? Estimasi: {0}. Dokumen pribadi tidak pernah disentuh.</value></data>
+  <data name="Cleanup.FreedReport"><value>Pembersihan selesai. Dibebaskan: {0}</value></data>
+
+  <!-- Restore center -->
+  <data name="Restore.Title"><value>Pusat Restore</value></data>
+  <data name="Restore.SnapshotList"><value>Snapshot Optimasi</value></data>
+  <data name="Restore.RestoreConfirm"><value>Kembalikan seluruh {0} perubahan tercatat dari snapshot ini?</value></data>
+  <data name="Restore.IntegrityBad"><value>Snapshot ini gagal pemeriksaan integritas dan tidak dapat digunakan.</value></data>
+  <data name="Restore.EmergencyOpen"><value>Emergency Restore…</value></data>
+  <data name="Restore.RestoredOk"><value>Rollback selesai: {0} dipulihkan, {1} gagal.</value></data>
+
+  <!-- History -->
+  <data name="History.Title"><value>Riwayat Optimasi</value></data>
+  <data name="History.Details"><value>Detail</value></data>
+
+  <!-- Settings -->
+  <data name="Settings.Title"><value>Pengaturan</value></data>
+  <data name="Settings.Theme"><value>Tema</value></data>
+  <data name="Settings.Language"><value>Bahasa</value></data>
+  <data name="Settings.RefreshSeconds"><value>Interval refresh dashboard (detik)</value></data>
+  <data name="Settings.Monitoring"><value>Aktifkan monitoring live dashboard</value></data>
+  <data name="Settings.AutoScan"><value>Scan otomatis saat aplikasi dibuka</value></data>
+  <data name="Settings.ConfirmBeforeApply"><value>Selalu konfirmasi sebelum menerapkan perubahan</value></data>
+  <data name="Settings.RestorePointDefault"><value>Buat restore point sebelum batch (disarankan)</value></data>
+  <data name="Settings.LoggingLevel"><value>Level logging</value></data>
+  <data name="Settings.Notifications"><value>Tampilkan notifikasi</value></data>
+  <data name="Settings.AdvancedMode"><value>Mode Advanced (menampilkan katalog Advanced dengan peringatan tambahan)</value></data>
+  <data name="Settings.AdvancedWarning"><value>Tweak advanced disembunyikan di balik konfirmasi eksplisit karena dapat mempengaruhi stabilitas.</value></data>
+  <data name="Settings.UpdateSection"><value>Pembaruan</value></data>
+  <data name="Settings.UpdateNone"><value>Neyra Optimizer 1.0 belum memiliki server update. Bila channel update bertanda tangan tersedia, pengecekan akan menjadi opt-in di sini.</value></data>
+  <data name="Settings.UninstallSection"><value>Asisten uninstall</value></data>
+  <data name="Settings.UninstallKeepOption"><value>Pertahankan optimasi saat ini (default): uninstall aplikasi membiarkan pengaturan Windows apa adanya.</value></data>
+  <data name="Settings.UninstallRestoreAll"><value>Coba pulihkan SEMUA perubahan Neyra Optimizer sekarang (memakai snapshot)</value></data>
+  <data name="Settings.Saved"><value>Pengaturan tersimpan.</value></data>
+  <data name="Settings.DataFolder"><value>Folder data (snapshot, riwayat, log)</value></data>
+
+  <!-- Logs -->
+  <data name="Logs.Title"><value>Log</value></data>
+  <data name="Logs.FilterAll"><value>Semua</value></data>
+  <data name="Logs.OpenFolder"><value>Buka folder log</value></data>
+
+  <!-- About -->
+  <data name="About.Title"><value>Tentang</value></data>
+  <data name="About.Version"><value>Versi {0}</value></data>
+  <data name="About.WhatItIs"><value>Neyra Optimizer adalah utilitarian tuning performa lokal untuk Windows 10 dan Windows 11.</value></data>
+  <data name="About.WhatItIsNot"><value>Ini BUKAN antivirus, BUKAN pengganti Windows Security, BUKAN driver updater, dan BUKAN alat overclocking. Tidak ada klaim performa yang dijamin; semua angka berasal dari pengukuran aktual di mesin Anda.</value></data>
+  <data name="About.PrivacyNote"><value>Neyra Optimizer bekerja sepenuhnya offline. Tidak ada telemetri yang dikirim. Support bundle hanya berisi info teknis anonim dan dibuat hanya saat Anda memintanya.</value></data>
+
+  <!-- Help/Safety -->
+  <data name="Help.Title"><value>Bantuan &amp; Keamanan</value></data>
+  <data name="Help.HowRollbackWorks"><value>Cara kerja rollback</value></data>
+  <data name="Help.RollbackBody"><value>Sebelum setiap batch, Neyra menulis Optimization Snapshot berisi nilai sebelumnya dari setiap perubahan. Restore Center dapat membalik perubahan tersebut satu per satu. Bila System Restore aktif, restore point Windows juga ditawarkan. Snapshot tersimpan di ProgramData\NeyraOptimizer\Snapshots dengan manifest SHA-256, sehingga Emergency Restore tetap bekerja walau state aplikasi lain rusak.</value></data>
+  <data name="Help.WhatWeNeverTouch"><value>Yang tidak akan pernah diubah Neyra</value></data>
+  <data name="Help.NeverTouchBody"><value>Windows Security / Defender / Firewall, RPC dan service boot inti, driver storage/display/audio/input, autentikasi, dependensi keamanan Windows Update, dan komponen recovery. Rule yang menyasar komponen tersebut ditolak sebelum menyentuh API Windows mana pun.</value></data>
+  <data name="Help.SupportBundle"><value>Buat support bundle</value></data>
+  <data name="Help.BundleContents"><value>Bundle berisi: ringkasan OS/CPU/RAM/disk anonim, log terstruktur terbaru, metadata riwayat optimasi, metadata snapshot (tanpa kredensial, tanpa file pribadi). Tinjau daftarnya sebelum ekspor.</value></data>
+  <data name="Help.DiagMode"><value>Restart dalam mode Diagnostik (baca-saja)</value></data>
+
+  <!-- Emergency -->
+  <data name="Emergency.Title"><value>Emergency Restore</value></data>
+  <data name="Emergency.Body"><value>Jendela minimal ini membaca snapshot langsung dari disk dengan pemeriksaan integritas. Tetap dapat digunakan walau antarmuka utama bermasalah.</value></data>
+
+  <!-- Crash recovery -->
+  <data name="Recovery.Title"><value>Operasi belum selesai terdeteksi</value></data>
+  <data name="Recovery.Body"><value>Neyra Optimizer tampaknya keluar saat “{0}” ({1}/{2} langkah). Tidak ada perubahan lanjutan yang akan dijalankan otomatis. Apa yang ingin Anda lakukan?</value></data>
+  <data name="Recovery.RollbackBtn"><value>Roll back perubahan yang sudah diterapkan</value></data>
+  <data name="Recovery.DismissBtn"><value>Abaikan (pertahankan perubahan)</value></data>
+
+  <!-- Notifications -->
+  <data name="Notify.Info"><value>Informasi</value></data>
+  <data name="Notify.Success"><value>Sukses</value></data>
+  <data name="Notify.Warning"><value>Peringatan</value></data>
+  <data name="Notify.Error"><value>Kesalahan</value></data>
+  <data name="Notify.RestartRequired"><value>Restart diperlukan</value></data>
+</root>
