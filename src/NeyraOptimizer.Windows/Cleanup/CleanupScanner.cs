@@ -201,8 +201,10 @@ public sealed class CleanupScanner : ICleanupScanner
         foreach (var drive in DriveInfo.GetDrives())
         {
             if (!drive.IsReady || drive.DriveType != System.IO.DriveType.Fixed) continue;
-            NativeMethods.SHEmptyRecycleBin(IntPtr.Zero, drive.Name,
+            var hr = NativeMethods.SHEmptyRecycleBin(IntPtr.Zero, drive.Name,
                 NativeMethods.SHERB_NOCONFIRMATION | NativeMethods.SHERB_NOPROGRESSUI | NativeMethods.SHERB_NOSOUND);
+            if (hr != 0 && (hr & 0xFFFF) is not (0x0002 or 0x0003)) // ignore "empty" results
+                System.Diagnostics.Debug.WriteLine($"SHEmptyRecycleBin({drive.Name}) -> 0x{hr:X8}");
         }
         return 0; // actual freed amount reported from pre-scan estimate by caller
     }
