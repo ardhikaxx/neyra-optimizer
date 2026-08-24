@@ -17,6 +17,8 @@ public sealed record LogEntry(
     string ErrorCode = "",
     long DurationMs = -1);
 
+[System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1716:Identifiers should not match keywords",
+    Justification = "'Error' matches the structured-logging vocabulary and is intentional.")]
 public interface INeyraLogger
 {
     void Debug(string component, string action, string message);
