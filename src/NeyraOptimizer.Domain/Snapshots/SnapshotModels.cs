@@ -51,8 +51,8 @@ public sealed class OptimizationSnapshot
     public required string Description { get; init; }
     public UsageProfileKind? ProfileUsed { get; init; }
     public List<SnapshotChange> Changes { get; init; } = new();
-    public bool RestorePointCreatedBeforeBatch { get; init; }
-    public string RestorePointSequenceNumber { get; init; } = string.Empty;
+    public bool RestorePointCreatedBeforeBatch { get; set; }
+    public string RestorePointSequenceNumber { get; set; } = string.Empty;
     public OperationStatus Status { get; set; } = OperationStatus.Pending;
     public int AppliedCount { get; set; }
     public int FailedCount { get; set; }
@@ -71,7 +71,7 @@ public sealed class HistoryRecord
 {
     public Guid Id { get; init; } = Guid.NewGuid();
     public DateTime StartedUtc { get; init; }
-    public DateTime? CompletedUtc { get; init; }
+    public DateTime? CompletedUtc { get; set; }
     public required string Description { get; init; }
     public DeviceClass DeviceClassAtTime { get; init; }
     public UsageProfileKind? ProfileUsed { get; init; }
