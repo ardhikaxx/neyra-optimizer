@@ -9,25 +9,21 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <RootNamespace>NeyraOptimizer.App</RootNamespace>
     <AssemblyName>NeyraOptimizer</AssemblyName>
+    <!-- en/id only: keeps publish output lean -->
     <SatelliteResourceLanguages>en;id</SatelliteResourceLanguages>
-    <!-- Keep WinRT metadata for PackageManager / GPU queries -->
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <!-- Custom entry point handles elevated-op before any WPF initialization -->
+    <StartupObject>NeyraOptimizer.App.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
-    <PackageReference Include="Microsoft.Extensions.Hosting" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Localization\Strings.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\Strings.resx" />
     <EmbeddedResource Update="Localization\Strings.id.resx">
-      <SubType>Designer</SubType>
+      <Culture>id</Culture>
     </EmbeddedResource>
   </ItemGroup>
 
