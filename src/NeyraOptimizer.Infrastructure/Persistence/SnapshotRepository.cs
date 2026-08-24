@@ -10,7 +10,7 @@ namespace NeyraOptimizer.Infrastructure.Persistence;
 /// deliberately outside any database so the Emergency Restore page can enumerate and validate
 /// them even if other application state is lost or corrupt.
 /// </summary>
-public sealed class SnapshotRepository : JsonFileRepositoryBase
+public sealed class SnapshotRepository : JsonFileRepositoryBase, ISnapshotRepository
 {
     private readonly string _root;
 
