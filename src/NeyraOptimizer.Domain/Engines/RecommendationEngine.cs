@@ -90,7 +90,8 @@ public sealed class RecommendationEngine : IRecommendationEngine
 
     private Recommendation? BuildServiceRule(AnalysisBundle bundle, RuleDefinition rule, UsageProfileKind profile)
     {
-        if (!rule.Payload.TryGetValue("ServiceName", out var serviceName))
+        if (!rule.Payload.TryGetValue("ServiceName", out var serviceName) &&
+            !rule.Payload.TryGetValue("TargetId", out serviceName))
             return null;
 
         var svc = bundle.Services.FirstOrDefault(s =>
@@ -133,7 +134,8 @@ public sealed class RecommendationEngine : IRecommendationEngine
 
     private Recommendation? BuildTaskRule(AnalysisBundle bundle, RuleDefinition rule, UsageProfileKind profile)
     {
-        if (!rule.Payload.TryGetValue("TaskPath", out var taskPath))
+        if (!rule.Payload.TryGetValue("TaskPath", out var taskPath) &&
+            !rule.Payload.TryGetValue("TargetId", out taskPath))
             return null;
 
         var task = bundle.Tasks.FirstOrDefault(t =>
@@ -166,7 +168,8 @@ public sealed class RecommendationEngine : IRecommendationEngine
 
     private Recommendation? BuildDebloatRule(AnalysisBundle bundle, RuleDefinition rule, UsageProfileKind profile)
     {
-        if (!rule.Payload.TryGetValue("MatchName", out var match))
+        if (!rule.Payload.TryGetValue("MatchName", out var match) &&
+            !rule.Payload.TryGetValue("TargetId", out match))
             return null;
 
         var app = bundle.InstalledApps.FirstOrDefault(a =>
