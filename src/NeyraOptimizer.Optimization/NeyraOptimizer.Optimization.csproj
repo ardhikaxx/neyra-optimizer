@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>NeyraOptimizer.Optimization</RootNamespace>
+    <Description>Neyra Optimizer optimization engine: safety engine, operation pipeline, rules catalog, modules, modes.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NeyraOptimizer.Domain\NeyraOptimizer.Domain.csproj" />
+    <ProjectReference Include="..\NeyraOptimizer.Security\NeyraOptimizer.Security.csproj" />
+    <ProjectReference Include="..\NeyraOptimizer.Infrastructure\NeyraOptimizer.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
