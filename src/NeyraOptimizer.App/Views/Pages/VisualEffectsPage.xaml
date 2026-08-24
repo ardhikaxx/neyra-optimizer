@@ -1,0 +1,55 @@
+<UserControl x:Class="NeyraOptimizer.App.Views.Pages.VisualEffectsPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:NeyraOptimizer.App.Localization">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="0,0,0,12">
+            <TextBlock Text="{loc:Loc Visuals.Title}" Style="{StaticResource PageTitle}"/>
+            <TextBlock Text="{loc:Loc Visuals.SignOutNote}" Style="{StaticResource MutedText}"/>
+        </StackPanel>
+
+        <Border Grid.Row="1" Style="{StaticResource CardBorder}" Padding="12,10" Margin="0,0,0,10">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Style="{StaticResource SecondaryButton}" Command="{Binding BestAppearanceCommand}"
+                        Content="{loc:Loc Visuals.BestAppearance}" MinWidth="140" Margin="0,0,8,0"/>
+                <Button Style="{StaticResource SecondaryButton}" Command="{Binding BalancedCommand}"
+                        Content="{loc:Loc Visuals.Balanced}" MinWidth="120" Margin="0,0,8,0"/>
+                <Button Style="{StaticResource AccentButton}" Command="{Binding BestPerformanceCommand}"
+                        Content="{loc:Loc Visuals.BestPerformance}" MinWidth="140"/>
+            </StackPanel>
+        </Border>
+
+        <ListBox Grid.Row="2" ItemsSource="{Binding Effects}" 
+                 BorderBrush="{DynamicResource Brush.Card.Border}" BorderThickness="1"
+                 Background="{DynamicResource Brush.Card.Background}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Padding="14,10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="{Binding DisplayName}" FontWeight="SemiBold"/>
+                                <TextBlock Text="{Binding EffectDescription}" FontSize="11.5"
+                                           Foreground="{DynamicResource Brush.TextMuted}" TextWrapping="Wrap"/>
+                                <TextBlock FontSize="11" Foreground="{DynamicResource Brush.TextMuted}"
+                                           Visibility="{Binding TakesEffectImmediately, Converter={StaticResource InverseBool}}"
+                                           Text="• Requires sign-out to take effect"/>
+                            </StackPanel>
+                            <CheckBox Grid.Column="1" IsChecked="{Binding ProposedEnabled, Mode=TwoWay}" VerticalAlignment="Center"
+                                      Checked="Effect_Changed" Unchecked="Effect_Changed"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>
