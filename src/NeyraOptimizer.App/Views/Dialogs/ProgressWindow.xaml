@@ -1,0 +1,13 @@
+<Window x:Class="NeyraOptimizer.App.Views.Dialogs.ProgressWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Width="460" SizeToContent="Height" WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize" ShowInTaskbar="False"
+        Background="{DynamicResource Brush.Window.Background}">
+    <Border Padding="26">
+        <StackPanel>
+            <ProgressBar x:Name="Bar" Minimum="0" Maximum="100" Height="7" IsIndeterminate="False"/>
+            <TextBlock x:Name="StepText" Margin="0,12,0,0" TextWrapping="Wrap" FontSize="12.5"/>
+        </StackPanel>
+    </Border>
+</Window>
