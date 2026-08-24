@@ -9,6 +9,9 @@
 
   <ItemGroup>
     <PackageReference Include="System.Management" />
+    <PackageReference Include="System.ServiceProcess.ServiceController" />
+    <PackageReference Include="Microsoft.CSharp" />
+    <PackageReference Include="System.Diagnostics.PerformanceCounter" />
   </ItemGroup>
 
   <ItemGroup>
