@@ -120,9 +120,10 @@ public static class ProtectedComponents
         "^Trend Micro", "^Malwarebytes", "^Sophos", "^F-Secure", "^Panda ",
     };
 
-    /// <summary>Returns true when a service may be considered for modification at all.</summary>
+    /// <summary>Returns true when a service may be considered for modification at all.
+    /// Empty/unknown identifiers are treated as protected (fail-closed).</summary>
     public static bool IsServiceProtected(string serviceName) =>
-        ServiceNames.Contains(serviceName ?? string.Empty);
+        string.IsNullOrWhiteSpace(serviceName) || ServiceNames.Contains(serviceName);
 
     public static bool IsTaskProtected(string taskPath)
     {
