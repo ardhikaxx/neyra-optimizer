@@ -87,6 +87,20 @@ public sealed class ElevatedOperationExecutor : IElevatedExecutor
                     };
                 }
 
+                case ElevatedOperationKind.ApplyBatch:
+                {
+                    var failures = new List<string>();
+                    foreach (var child in request.Operations)
+                    {
+                        var childResult = Execute(child);
+                        if (!childResult.Success)
+                            failures.Add($"[{child.Kind}] {childResult.ErrorText}");
+                    }
+                    return failures.Count == 0
+                        ? new ElevatedOperationResult { Success = true, Detail = $"{request.Operations.Count} operation(s) applied." }
+                        : new ElevatedOperationResult { Success = false, ErrorText = string.Join("; ", failures) };
+                }
+
                 default:
                     return new ElevatedOperationResult { Success = false, ErrorText = $"Unsupported kind '{request.Kind}'." };
             }
