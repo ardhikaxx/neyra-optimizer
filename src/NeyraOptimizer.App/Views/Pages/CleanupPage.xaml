@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="NeyraOptimizer.App.Views.Pages.CleanupPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:NeyraOptimizer.App.Localization">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="0,0,0,12">
+            <StackPanel>
+                <TextBlock Text="{loc:Loc Cleanup.Title}" Style="{StaticResource PageTitle}"/>
+                <TextBlock Text="{Binding StatusText}" Style="{StaticResource MutedText}" TextWrapping="Wrap"/>
+            </StackPanel>
+            <Button HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource AccentButton}"
+                    Command="{Binding CleanSelectedCommand}" Content="{loc:Loc Cleanup.DeleteSelected}"
+                    IsEnabled="{Binding CanModify, Mode=OneWay}"/>
+        </Grid>
+
+        <Border Grid.Row="1" Style="{StaticResource CardBorder}" Padding="12,10" Margin="0,0,0,10">
+            <DockPanel>
+                <TextBlock DockPanel.Dock="Right" VerticalAlignment="Center" Margin="10,0,0,0"
+                           Style="{StaticResource MutedText}" Text="{Binding TotalText}"/>
+                <Button Style="{StaticResource SecondaryButton}" Command="{Binding ScanCommand}"
+                        Content="{loc:Loc Cleanup.Scan}" MinWidth="140"
+                        IsEnabled="{Binding IsScanning, Converter={StaticResource InverseBool}}"/>
+            </DockPanel>
+        </Border>
+
+        <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto">
+            <ItemsControl ItemsSource="{Binding Rows}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Style="{StaticResource CardBorder}" Padding="14,9" Margin="0,4">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="110"/>
+                                </Grid.ColumnDefinitions>
+                                <CheckBox IsChecked="{Binding IsSelected}" VerticalAlignment="Top"/>
+                                <StackPanel Grid.Column="1" Margin="10,0">
+                                    <TextBlock Text="{Binding DisplayName}" FontWeight="SemiBold"/>
+                                    <TextBlock Text="{Binding Description}" Style="{StaticResource MutedText}" TextWrapping="Wrap"/>
+                                </StackPanel>
+                                <TextBlock Grid.Column="2" Text="{Binding SizeText}" FontWeight="SemiBold"
+                                           HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
