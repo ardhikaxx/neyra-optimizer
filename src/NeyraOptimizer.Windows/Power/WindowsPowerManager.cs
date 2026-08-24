@@ -190,7 +190,7 @@ public sealed class WindowsPowerManager : IPowerManager
     private static string ReadFriendlyName(Guid planGuid)
     {
         uint size = 0;
-        NativeMethods.PowerReadFriendlyName(IntPtr.Zero, ref planGuid, IntPtr.Zero, IntPtr.Zero, IntPtr.Zero, ref size);
+        _ = NativeMethods.PowerReadFriendlyName(IntPtr.Zero, ref planGuid, IntPtr.Zero, IntPtr.Zero, IntPtr.Zero, ref size);
         if (size == 0) return "(unknown plan)";
         var buffer = Marshal.AllocHGlobal((int)size);
         try
