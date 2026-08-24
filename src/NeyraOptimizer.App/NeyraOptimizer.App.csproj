@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
+    <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Assets\neyra.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <RootNamespace>NeyraOptimizer.App</RootNamespace>
+    <AssemblyName>NeyraOptimizer</AssemblyName>
+    <SatelliteResourceLanguages>en;id</SatelliteResourceLanguages>
+    <!-- Keep WinRT metadata for PackageManager / GPU queries -->
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Localization\Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\Strings.id.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NeyraOptimizer.Application\NeyraOptimizer.Application.csproj" />
+    <ProjectReference Include="..\NeyraOptimizer.Diagnostics\NeyraOptimizer.Diagnostics.csproj" />
+    <ProjectReference Include="..\NeyraOptimizer.Domain\NeyraOptimizer.Domain.csproj" />
+    <ProjectReference Include="..\NeyraOptimizer.Infrastructure\NeyraOptimizer.Infrastructure.csproj" />
+    <ProjectReference Include="..\NeyraOptimizer.Optimization\NeyraOptimizer.Optimization.csproj" />
+    <ProjectReference Include="..\NeyraOptimizer.Security\NeyraOptimizer.Security.csproj" />
+    <ProjectReference Include="..\NeyraOptimizer.Windows\NeyraOptimizer.Windows.csproj" />
+  </ItemGroup>
+
+</Project>
