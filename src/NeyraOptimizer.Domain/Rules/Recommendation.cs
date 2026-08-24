@@ -4,7 +4,7 @@ using NeyraOptimizer.Domain.Models.System;
 namespace NeyraOptimizer.Domain.Rules;
 
 /// <summary>A concrete, user-visible proposal derived from a rule plus live system state.</summary>
-public sealed class Recommendation
+public sealed record Recommendation
 {
     public required string RuleId { get; init; }
     public required string Title { get; init; }
