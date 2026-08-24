@@ -1,4 +1,4 @@
-using System.Text.Json;
+﻿using System.Text.Json;
 using NeyraOptimizer.Security.Integrity;
 
 namespace NeyraOptimizer.Infrastructure.Persistence;
@@ -40,7 +40,7 @@ public abstract class JsonFileRepositoryBase
         }
         catch (JsonException)
         {
-            return null; // corrupt file → caller treats as missing (tolerant read for Emergency Restore)
+            return null; // corrupt file â†’ caller treats as missing (tolerant read for Emergency Restore)
         }
     }
 
@@ -73,10 +73,12 @@ public abstract class JsonFileRepositoryBase
         if (item is null) return (null, SnapshotIntegrity.Corrupt);
         if (!hasManifest) return (item, SnapshotIntegrity.NoManifest);
         var expected = File.ReadAllText(manifestPath).Trim();
-        var actual = IntegrityUtil.ComputeSha256(File.ReadAllText(path));
-        return string.Equals(expected, actual, StringComparison.OrdinalIgnoreCase)
-            ? (item, SnapshotIntegrity.Verified)
-            : (item, SnapshotIntegrity.Corrupt);
+        var content = File.ReadAllText(path);
+        var actualFromDisk = IntegrityUtil.ComputeSha256(path); // hash of on-disk bytes
+        var actualFromText = IntegrityUtil.ComputeSha256Utf8(content); // tolerant encoding round-trip
+        var verified = string.Equals(expected, actualFromDisk, StringComparison.OrdinalIgnoreCase)
+                       || string.Equals(expected, actualFromText, StringComparison.OrdinalIgnoreCase);
+        return verified ? (item, SnapshotIntegrity.Verified) : (item, SnapshotIntegrity.Corrupt);
     }
 }
 

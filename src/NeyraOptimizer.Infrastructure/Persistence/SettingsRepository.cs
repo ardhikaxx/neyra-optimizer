@@ -6,9 +6,16 @@ namespace NeyraOptimizer.Infrastructure.Persistence;
 
 public sealed class SettingsRepository : JsonFileRepositoryBase
 {
+    private readonly string _path;
+
+    public SettingsRepository(string? settingsFileOverride = null)
+    {
+        _path = settingsFileOverride ?? AppPaths.SettingsFile;
+    }
+
     public AppSettings Load()
     {
-        var settings = Read<AppSettings>(AppPaths.SettingsFile);
+        var settings = Read<AppSettings>(_path);
         if (settings is null) return new AppSettings();
         return Migrate(settings);
     }
@@ -16,11 +23,11 @@ public sealed class SettingsRepository : JsonFileRepositoryBase
     public void Save(AppSettings settings)
     {
         settings.SchemaVersion = AppSettings.CurrentSchemaVersion;
-        WriteAtomic(AppPaths.SettingsFile, JsonSerializer.Serialize(settings, Serializer), withIntegrityManifest: false);
+        WriteAtomic(_path, JsonSerializer.Serialize(settings, Serializer), withIntegrityManifest: false);
     }
 
     /// <summary>Forward-migrates older persisted settings. Never throws on unknown fields.</summary>
-    private static AppSettings Migrate(AppSettings settings)
+    internal static AppSettings Migrate(AppSettings settings)
     {
         // v1 → current: nothing to transform yet; clamp values defensively.
         settings.DashboardRefreshSeconds = Math.Clamp(settings.DashboardRefreshSeconds, 2, 60);
