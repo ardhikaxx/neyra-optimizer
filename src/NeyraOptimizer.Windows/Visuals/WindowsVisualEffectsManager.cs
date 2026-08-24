@@ -13,6 +13,7 @@ namespace NeyraOptimizer.Windows.Visuals;
 public sealed class WindowsVisualEffectsManager : IVisualEffectsManager
 {
     public const string KeyMinAnimate = "MinAnimate";
+    public const string KeyMenuAnimation = "MenuAnimation";
     public const string KeyDragFullWindows = "DragFullWindows";
     public const string KeyTaskbarAnimations = "TaskbarAnimations";
     public const string KeyListviewAlphaSelect = "ListviewAlphaSelect";
@@ -30,6 +31,7 @@ public sealed class WindowsVisualEffectsManager : IVisualEffectsManager
         var states = new Dictionary<string, bool>(StringComparer.OrdinalIgnoreCase);
 
         states[KeyMinAnimate] = ReadInt(RegRoot.CurrentUser, DesktopKey, "MinAnimate", 1) != 0;
+        states[KeyMenuAnimation] = ReadInt(RegRoot.CurrentUser, DesktopKey, "MenuAnimation", 1) != 0;
         states[KeyDragFullWindows] = ReadInt(RegRoot.CurrentUser, DesktopKey, "DragFullWindows", 1) != 0;
         states[KeyTaskbarAnimations] = ReadInt(RegRoot.CurrentUser, AdvancedKey, "TaskbarAnimations", 1) != 0;
         states[KeyListviewAlphaSelect] = ReadInt(RegRoot.CurrentUser, AdvancedKey, "ListviewAlphaSelect", 1) != 0;
@@ -47,6 +49,9 @@ public sealed class WindowsVisualEffectsManager : IVisualEffectsManager
             case KeyMinAnimate:
                 WriteInt(RegRoot.CurrentUser, DesktopKey, "MinAnimate", enabled ? 1 : 0);
                 SetAnimation(enabled);
+                break;
+            case KeyMenuAnimation:
+                WriteInt(RegRoot.CurrentUser, DesktopKey, "MenuAnimation", enabled ? 1 : 0);
                 break;
             case KeyDragFullWindows:
                 WriteInt(RegRoot.CurrentUser, DesktopKey, "DragFullWindows", enabled ? 1 : 0);
@@ -132,6 +137,7 @@ public static class VisualEffectsPresets
         new[]
         {
             ("MinAnimate", "Window minimize/maximize animation", "Animates windows when minimized or restored.", true),
+            ("MenuAnimation", "Menu fade/slide animation", "Fade and slide effects for context and drop-down menus.", true),
             ("DragFullWindows", "Show window contents while dragging", "Renders full window content during a drag operation.", true),
             ("TaskbarAnimations", "Taskbar animations", "Icon hover and launch animations on the taskbar.", true),
             ("ListviewAlphaSelect", "Smooth-select list items", "Translucent selection rectangle in file lists.", false),
