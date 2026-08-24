@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.ServiceProcess;
 using NeyraOptimizer.Windows.Native;
 using NeyraOptimizer.Domain.Abstractions;
 using NeyraOptimizer.Domain.Enums;
@@ -128,10 +129,7 @@ public sealed class CleanupScanner : ICleanupScanner
         Make(CleanupCategory.ThumbnailCache, "Thumbnail cache",
             "Explorer thumbnail images. They are rebuilt automatically when folders are opened.",
             new[] { Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"Microsoft\Windows\Explorer") },
-            requiresAdmin: false, ct) with
-        {
-            // Only thumbcache_*.db count here; iconcache is excluded from deletion logic as well.
-        };
+            requiresAdmin: false, ct);
 
     private static CleanupCandidate WerCandidate(CancellationToken ct) =>
         Make(CleanupCategory.ErrorReports, "Error reports and queues",
