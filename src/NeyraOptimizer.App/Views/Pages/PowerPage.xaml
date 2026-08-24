@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="NeyraOptimizer.App.Views.Pages.PowerPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:NeyraOptimizer.App.Localization">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="{loc:Loc Power.Title}" Style="{StaticResource PageTitle}" Margin="0,0,0,12"/>
+
+        <Border Grid.Row="1" Style="{StaticResource CardBorder}" Margin="0,0,0,10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="{loc:Loc Power.Overlay}" Style="{StaticResource SectionTitle}"/>
+                    <TextBlock Text="{loc:Loc Power.OverlayUnsupported}" Style="{StaticResource MutedText}"
+                               Visibility="{Binding OverlaySupported, Converter={StaticResource InverseBool}}"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center"
+                            Visibility="{Binding OverlaySupported, Converter={StaticResource BoolToVis}}">
+                    <ComboBox ItemsSource="{Binding OverlayOptions}" SelectedItem="{Binding CurrentOverlay}"
+                              MinWidth="170" Margin="0,0,8,0" Style="{StaticResource NeyraComboBox}"/>
+                    <Button Style="{StaticResource AccentButton}" Command="{Binding SetOverlayCommand}"
+                            Content="{loc:Loc Common.Apply}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="2" Style="{StaticResource CardBorder}" Margin="0,0,0,10">
+            <TextBlock Text="{Binding BatteryText}"/>
+        </Border>
+
+        <Border Grid.Row="3" Style="{StaticResource CardBorder}">
+            <StackPanel>
+                <DockPanel Margin="0,0,0,8">
+                    <Button DockPanel.Dock="Right" Style="{StaticResource AccentButton}" Command="{Binding ActivatePlanCommand}"
+                            Content="{loc:Loc Common.Apply}" IsEnabled="{Binding CanModify, Mode=OneWay}"/>
+                    <TextBlock Text="{loc:Loc Power.Plans}" Style="{StaticResource SectionTitle}" VerticalAlignment="Center"/>
+                </DockPanel>
+                <ListBox ItemsSource="{Binding Plans}" SelectedItem="{Binding SelectedPlan}"
+                         BorderThickness="0" Background="Transparent">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border Padding="6,4">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Name}" FontWeight="SemiBold"/>
+                                    <TextBlock Margin="8,0,0,0" FontSize="11.5" VerticalAlignment="Center"
+                                               Foreground="{DynamicResource Brush.Success}">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Text" Value=""/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsActive}" Value="True">
+                                                        <Setter Property="Text" Value="✓ Active"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>
