@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
   Membuat GitHub Release v1.0.0 dan mengunggah installer MSI + checksum.
 
