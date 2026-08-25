@@ -48,16 +48,24 @@
                             <Setter Property="Template">
                                 <Setter.Value>
                                     <ControlTemplate TargetType="ListBoxItem">
-                                        <Border x:Name="bd" Background="Transparent" CornerRadius="7"
-                                                Margin="9,1" Padding="12,8">
-                                            <ContentPresenter VerticalAlignment="Center"/>
-                                        </Border>
+                                        <Grid Margin="9,1">
+                                            <Border x:Name="ind" Width="3.5" CornerRadius="2"
+                                                    HorizontalAlignment="Left" Margin="-4,6,0,6"
+                                                    Background="{DynamicResource Brush.Accent}"
+                                                    Visibility="Collapsed"/>
+                                            <Border x:Name="bd" Background="Transparent" CornerRadius="7"
+                                                    Padding="12,8">
+                                                <ContentPresenter VerticalAlignment="Center"/>
+                                            </Border>
+                                        </Grid>
                                         <ControlTemplate.Triggers>
                                             <Trigger Property="IsMouseOver" Value="True">
                                                 <Setter TargetName="bd" Property="Background" Value="{DynamicResource Brush.ListItem.Hover}"/>
                                             </Trigger>
                                             <Trigger Property="IsSelected" Value="True">
                                                 <Setter TargetName="bd" Property="Background" Value="{DynamicResource Brush.Accent.Subtle}"/>
+                                                <Setter TargetName="ind" Property="Visibility" Value="Visible"/>
+                                                <Setter Property="TextElement.Foreground" Value="{DynamicResource Brush.Accent}"/>
                                             </Trigger>
                                         </ControlTemplate.Triggers>
                                     </ControlTemplate>

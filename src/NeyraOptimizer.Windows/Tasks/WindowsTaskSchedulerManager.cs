@@ -61,6 +61,10 @@ public sealed class WindowsTaskSchedulerManager : ITaskSchedulerManager
         {
             throw new ScheduledTaskException($"Scheduled task '{taskPath}' no longer exists.", ex);
         }
+        catch (COMException ex) when (ex.HResult == unchecked((int)0x800704E3))
+        {
+            throw new ScheduledTaskException("The Task Scheduler service connection was lost. Please try again.", ex);
+        }
     }
 
     public string ExportTaskXml(string taskPath)

@@ -31,6 +31,30 @@ public static class OptimizationFlow
         var session = sp.GetRequiredService<SessionState>();
         var coordinator = sp.GetRequiredService<IOptimizationCoordinator>();
 
+        // The pipeline needs a device profile. If the user skipped the onboarding scan or
+        // automatic scan is off, run a quick analysis here instead of crashing.
+        if (session.LastAnalysis is null)
+        {
+            var analyzer = sp.GetRequiredService<Application.Analysis.IAnalysisOrchestrator>();
+            var scanWindow = new ProgressWindow(Translator.Instance["Analyze.ScanInProgress"]) { Owner = owner };
+            scanWindow.Show();
+            try
+            {
+                var result = await analyzer.AnalyzeAsync(2, CancellationToken.None);
+                session.LastAnalysis = result.Bundle;
+                session.LastRecommendations = result.Recommendations;
+            }
+            catch (Exception ex)
+            {
+                ConfirmDialog.Ask("Notify.Error", ex.Message, danger: false, confirmText: Translator.Instance["Common.Close"]);
+                return null;
+            }
+            finally
+            {
+                scanWindow.Close();
+            }
+        }
+
         var preview = coordinator.Preview(selected, session.LastAnalysis!.Profile);
 
         bool createRestorePoint = session.Settings.CreateRestorePointBeforeChanges;

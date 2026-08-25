@@ -23,10 +23,17 @@ internal sealed class TaskSchedulerComSession : IDisposable
             var type = Type.GetTypeFromProgID("Schedule.Service");
             if (type is null) return false;
             session._service = Activator.CreateInstance(type);
-            return session._service is not null;
+            if (session._service is null) return false;
+
+            // ITaskService::Connect must be called before GetFolder/GetTask; skipping it makes
+            // every subsequent call fail with 0x800704E3 ("only when you are connected").
+            // No arguments => connect to the local machine as the current user.
+            session._service.Connect();
+            return true;
         }
         catch (SystemException)
         {
+            session.Dispose();
             return false;
         }
     }
